@@ -1,6 +1,7 @@
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Layout/Header";
+import FixedMenu from "./components/Layout/FixedMenu";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={nunito.className}>
         <Header />
         <main>{children}</main>
+        <FixedMenu />
       </body>
     </html>
   );
