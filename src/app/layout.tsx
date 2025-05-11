@@ -1,7 +1,7 @@
 import { Nunito } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Layout/Header";
-import FixedMenu from "@/components/Layout/FixedMenu";
+import Header from "@/components/layout/Header";
+import FixedMenu from "@/components/layout/FixedMenu";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
