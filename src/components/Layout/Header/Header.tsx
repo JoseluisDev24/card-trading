@@ -2,6 +2,7 @@
 
 import { Button, IconButton } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 import { Search } from "../Sidebar/Search";
@@ -19,18 +20,19 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 w-full flex items-center justify-between py-2 px-6 bg-white shadow-sm text-white h-14 md:h-16 z-48">
+      <header className="sticky top-0 w-full flex items-center justify-between py-1 px-2 md:px-9 bg-white shadow-lg text-white h-11 md:h-18 z-40">
         <div className="flex items-center gap-4">
           <IconButton onClick={handleDrawerOpen}>
             <Image
               src="/menu.png"
-              width={26}
-              height={26}
+              width={30}
+              height={30}
               alt="menu"
               className="opacity-80"
             />
           </IconButton>
 
+          <Link href="/login">
           <Button
             variant="outlined"
             size="small"
@@ -43,24 +45,26 @@ const Header = () => {
               color: "white",
               fontSize: "0.8rem",
               fontWeight: "600",
-              width: "76px",
-              height: "28px",
+              width: "83px",
+              height: "32px",
+              padding: "3px",
               textTransform: "none",
             }}
           >
             Sign Up
           </Button>
+          </Link>
         </div>
         <div className="hidden lg:flex items-center justify-center w-1/3">
           <Search />
         </div>
 
-        <div className="flex items-center w-32 lg:w-36 py-2 gap-2">
+        <Link href={"/"} className="flex items-center w-32 lg:w-36 py-2 gap-2">
           <Image src="/logoTrade.png" width={20} height={20} alt="logo" />
-          <h1 className="text-2xl lg:text-3xl font-extrabold text-gray-800">
-            T-Cards
+          <h1 className="text-2xl lg:text-3xl font-extrabold text-gray-900">
+            TradeUp 
           </h1>
-        </div>
+        </Link>
       </header>
 
       <Sidebar
