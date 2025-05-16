@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../components/Layout/Header/Header";
 import WelcomeModal from "@/components/Layout/Modals/WelcomeModal";
 import FixedMenu from "../components/Layout/FixedMenu";
+import Footer from "../components/Layout/Footer/Footer";
 
 
 const nunito = Nunito({ subsets: ["latin"] });
@@ -24,6 +25,7 @@ export default function RootLayout({
         <WelcomeModal />
 
         <main>{children}</main>
+        <Footer />
         <FixedMenu />
       </body>
     </html>

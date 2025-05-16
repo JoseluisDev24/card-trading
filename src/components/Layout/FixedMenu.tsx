@@ -56,10 +56,10 @@ const FixedMenu = () => {
         </div>
 
         <div className="flex gap-10">
-          <div className="flex flex-col items-center gap-1 opacity-80">
+          <Link href={"/inbox"} className="flex flex-col items-center gap-1 opacity-80">
             <PiChatCircleBold className="text-3xl" />
             <span className="text-xs">Inbox</span>
-          </div>
+          </Link>
 
           <Link href={"/trades"} className="flex flex-col items-center gap-1">
             <PiArrowsCounterClockwiseBold
