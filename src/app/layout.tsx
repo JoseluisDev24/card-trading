@@ -23,7 +23,6 @@ export default function RootLayout({
       <body className={nunito.className}>
         <Header />
         <WelcomeModal />
-
         <main>{children}</main>
         <Footer />
         <FixedMenu />

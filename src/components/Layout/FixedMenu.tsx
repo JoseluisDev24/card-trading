@@ -12,7 +12,7 @@ const FixedMenu = () => {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <div className="sticky bottom-0 w-full rounded-t-2xl bg-white shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.2)] z-48 md:hidden">
+    <div className="sticky bottom-0 w-full rounded-t-2xl bg-white shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.2)] z-[1400] md:hidden">
       <div className="relative flex justify-between items-center px-6 h-16 text-gray-800">
         <div className="flex items-center gap-10">
           <Link href={"/"} className="flex flex-col items-center gap-1">

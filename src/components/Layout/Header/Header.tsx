@@ -4,7 +4,7 @@ import { Button, IconButton } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Sidebar from "@/components/Layout/Sidebar/Sidebar";
+import Sidebar from "@/components/Layout/Sidebar/ResponsiveSidebar";
 import { Search } from "../Sidebar/Search";
 
 const Header = () => {
@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 w-full flex items-center justify-between py-1 px-2 md:px-9 bg-white shadow-lg text-white h-11 md:h-18 z-40">
+      <header className="sticky top-0 w-full flex items-center justify-between py-1 px-2 md:px-9 bg-white shadow-lg text-white h-11 md:h-18 z-30">
         <div className="flex items-center gap-4">
           <IconButton onClick={handleDrawerOpen}>
             <Image
