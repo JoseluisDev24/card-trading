@@ -1,25 +1,30 @@
 "use client";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const WelcomeModal = () => {
   const [show, setShow] = useState(false);
+  const pathname = usePathname();
 
-    useEffect(() => {
+  const isHome = pathname === "/home";
+
+  useEffect(() => {
+    if (isHome) {
       setShow(true);
-    }, []);
-  
-    if (!show) return null;
-  
+    }
+  }, [isHome]);
+
+  if (!show || !isHome) return null;
 
   return (
     <>
-      <div className="fixed inset-0 bg-black opacity-70 z-50" />
-      <div className="fixed inset-0 z-50 flex items-center justify-center">
-        <div className="bg-green-50 fixed top-12 rounded-3xl shadow-2xl p-4 w-[95%] h-[68%] lg:w-[45%] lg:h-[55%] lg:top-28 text-center">
+      <div className="fixed inset-0 bg-black/70 z-[1600]" />
+      <div className="fixed inset-0 z-[1700] flex items-center justify-center">
+        <div className="bg-[#F3FCFF] fixed top-12 rounded-3xl shadow-2xl p-4 w-[95%] h-[68%] lg:w-[45%] lg:h-[55%] lg:top-28 text-center">
           <h2 className="text-3xl font-semibold mb-4">
             🚀 What&apos;s New on TradeUp!
           </h2>
-          <div className="bg-green-100/60 rounded-xl shadow-xl p-2 md:px-3 py-2 text-left text-sm text-gray-800 space-y-4 lg:space-y-1">
+          <div className="bg-[#d5f8ff]/40 rounded-xl shadow-xl p-2 md:px-3 py-2 text-left text-sm text-gray-800 space-y-4 lg:space-y-1">
             <div>
               <p className="font-bold text-lg py-1">
                 📩 Express Interest, Your Way

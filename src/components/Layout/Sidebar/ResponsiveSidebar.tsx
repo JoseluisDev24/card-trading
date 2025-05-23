@@ -54,13 +54,14 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
       ),
       label: "Sign Up",
       href: "/signup",
+      color: "#050F0F",
     },
     {
       icon: <LoginIcon fontSize="large" sx={{ color: "#001F3F" }} />,
       label: "Log In",
       href: "/login",
-      color: "#050F0F",
       fontWeight: 600,
+      color: "#001F3F",
     },
   ];
 
@@ -133,7 +134,7 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
         <List>
           {topItems.map(({ icon, label, color, fontWeight, href }) => (
             <Link key={label} href={href} passHref>
-              <ListItem>
+              <ListItem onClick={() => toggleDrawer(false)}>
                 <ListItemIcon sx={{ minWidth: 50 }}>{icon}</ListItemIcon>{" "}
                 <ListItemText
                   primary={label}
@@ -156,7 +157,8 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
           className="text-gray-600"
           sx={{
             "& .MuiListItemText-primary": {
-              fontSize: "0.85rem",
+              fontSize: isDesktop ? "0.85rem" : "1.1rem",
+
               fontWeight: 400,
               color: "#4B5563",
             },
@@ -164,7 +166,7 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
         >
           {bottomItems.map(({ label, href }) => (
             <Link key={label} href={href} passHref>
-              <ListItem>
+              <ListItem onClick={() => toggleDrawer(false)}>
                 <ListItemText primary={label} />
               </ListItem>
             </Link>
