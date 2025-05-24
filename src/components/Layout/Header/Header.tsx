@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import Sidebar from "@/components/Layout/Sidebar/ResponsiveSidebar";
+import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 import { Search } from "../Sidebar/Search";
 import { FiCompass } from "react-icons/fi";
 

@@ -71,13 +71,13 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
           icon: (
             <FiHome
               className={`text-3xl ${
-                isActive("/") ? "text-orange-500" : "text-[#001F3F]"
+                isActive("/home") ? "text-orange-500" : "text-[#001F3F]"
               }`}
             />
           ),
           label: "Home",
-          href: "/",
-          color: isActive("/") ? "#F97316" : "#001F3F",
+          href: "/home",
+          color: isActive("/home") ? "#F97316" : "#001F3F",
           fontWeight: 600,
         },
         {
