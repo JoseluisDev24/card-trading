@@ -30,7 +30,7 @@ const productSchema = new Schema<IProduct>(
     },
     owner: {
       type: Schema.Types.ObjectId,
-      ref: "User", // Este será el modelo del usuario (cuando lo crees)
+      ref: "User", // Este será el modelo del usuario
     },
   },
   { timestamps: true, collection: "products" }
