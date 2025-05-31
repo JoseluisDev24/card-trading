@@ -1,19 +1,27 @@
 "use client";
 
-import { Button, TextField } from "@mui/material";
-import SyncAltIcon from "@mui/icons-material/SyncAlt";
-import Image from "next/image";
+import { Button } from "@mui/material";
 import { IoFilter } from "react-icons/io5";
+import OffersPending from "@/components/home/OffersPending";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen p-4 lg:px-70 lg:py-14 bg-white">
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold text-gray-800">Public feed</h1>
-        <button className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-800 rounded-lg text-sm font-medium hover:bg-gray-300 transition">
-          <IoFilter className="text-lg" />
-          Filters
-        </button>
+        <div className="flex items-center justify-center gap-2">
+          <Link href="/">
+          <button className="px-3 py-1 text-white font-bold rounded-full bg-gradient-to-b from-[#ff7900] to-[#ff5c00] hover:brightness-110 transition hidden lg:flex justify-between gap-1 items-center cursor-pointer">
+            +
+            Create post
+          </button>
+          </Link>
+          <button className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-800 rounded-lg text-sm font-medium hover:bg-gray-300 transition">
+            <IoFilter className="text-lg" />
+            Filters
+          </button>
+        </div>
       </div>
       <Button
         sx={{
@@ -41,90 +49,8 @@ export default function Home() {
         </span>
       </div>
       <div className="max-h-1 min-h-1 bg-gray-200 w-full"></div>
-      <div className="flex flex-col py-3">
-        <Button
-          sx={{
-            textTransform: "none",
-            backgroundColor: "#fff5d3",
-            color: "#ee7440",
-            borderRadius: "16px",
-            fontWeight: 600,
-            "&:hover": {
-              backgroundColor: "#fff593",
-            },
-          }}
-          className="flex items-center justify-between w-32 h-7"
-        >
-          Offer pending
-        </Button>
-        <div className="flex py-4 justify-between items-center px-6">
-          <div className="flex flex-col justify-center items-center gap-2">
-            <Image
-              src="/cards/charizard.avif"
-              alt="Offer"
-              width={90}
-              height={0}
-              className="shadow-lg "
-              style={{ height: "auto", borderRadius: "16px" }}
-            />
-            <div className="flex justify-center items-center gap-2">
-              <img
-                src="https://unavatar.io/github/JoseluisDev24"
-                alt="imagen de perfil"
-                className="w-6 rounded-full"
-              />
-              <span className="font-semibold text-md text-gray-800">Shane</span>
-            </div>
-          </div>
-          <SyncAltIcon className="text-gray-400" />
-          <div className="flex flex-col justify-center items-center gap-2">
-            <Image
-              src="/cards/skeledirge.png"
-              alt="Offer"
-              width={90}
-              height={0}
-              className="shadow-lg "
-              style={{ height: "auto", borderRadius: "16px" }}
-            />
-            <div className="flex justify-center items-center gap-2">
-              <img
-                src="https://unavatar.io/github/GonzaloRosano"
-                alt="imagen de perfil"
-                className="w-6 rounded-full"
-              />
-              <span className="font-semibold text-md text-gray-800">
-                J6Remy
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center items-center gap-2">
-          <img
-            src="https://unavatar.io/github/JoseluisDev24"
-            alt="imagen de perfil"
-            className="w-6 rounded-full"
-          />
-          <TextField
-            label="Write a comment..."
-            variant="outlined"
-            size="small"
-            className="w-full"
-            slotProps={{
-              input: {
-                sx: {
-                  backgroundColor: "#f5f5f5",
-                  borderRadius: "16px",
-                  height: 40,
-                  paddingX: 2,
-                  "& fieldset": {
-                    border: "none",
-                  },
-                },
-              },
-            }}
-          />
-        </div>
-      </div>
+      <OffersPending />
+      <OffersPending />
     </div>
   );
 }

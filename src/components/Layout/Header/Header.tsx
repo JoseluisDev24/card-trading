@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 w-full flex items-center justify-between py-1 px-2 md:px-9 bg-white shadow-lg text-white h-11 md:h-18 z-30">
+      <header className="sticky top-0 w-full flex items-center justify-between py-1 px-2 md:px-9 bg-white shadow-lg text-white h-11 md:h-14 z-30">
         <div className="flex items-center gap-4">
           <IconButton onClick={handleDrawerOpen}>
             <Image
@@ -49,11 +49,12 @@ const Header = () => {
                   background: "linear-gradient(to right, #FF6a13, #ff9900)",
                 },
                 borderRadius: "20px",
+                border: "none",
                 color: "white",
                 fontSize: "0.8rem",
                 fontWeight: "600",
                 width: "83px",
-                height: "32px",
+                height: "30px",
                 padding: "3px",
                 textTransform: "none",
               }}
@@ -69,7 +70,7 @@ const Header = () => {
             />
           </Link>
         </div>
-        <div className="hidden lg:flex items-center justify-center w-1/3">
+        <div className="hidden lg:flex items-center justify-center w-2/5">
           <Search />
         </div>
 

@@ -12,7 +12,7 @@ export default function Landing() {
         lovers. No Middleman. 90% of our trades are complete in 4 days or less!
       </p>
 
-      <button className="mt-6 px-4 py-2 text-white font-semibold rounded-full bg-gradient-to-b from-[#ff7900] to-[#ff5c00] hover:brightness-110 transition">
+      <button className="mt-6 px-6 py-3 text-white font-semibold rounded-full bg-gradient-to-b from-[#ff7900] to-[#ff5c00] hover:brightness-110 transition">
         Start Trading Free
       </button>
       <img src="/landing.avif" alt="landing demo" className="pt-4" />
