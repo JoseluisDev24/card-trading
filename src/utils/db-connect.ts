@@ -6,7 +6,7 @@ declare global {
     | undefined;
 }
 
-// Usar `globalThis` de forma segura y moderna
+// Usar `globalThis` de forma segura y moderna.
 const globalWithMongoose = globalThis as typeof globalThis & {
   mongoose?: { conn: Mongoose | null; promise: Promise<Mongoose> | null };
 };
