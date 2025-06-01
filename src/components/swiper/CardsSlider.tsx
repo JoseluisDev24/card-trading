@@ -16,7 +16,7 @@ export default function ProductSlider() {
     return <p className="text-center py-8 text-red-500">Error: {error}</p>;
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 pt-4">
+    <div className="w-full max-w-6xl mx-auto pb-6">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -26,7 +26,7 @@ export default function ProductSlider() {
         slidesPerView={2}
         breakpoints={{
           640: { slidesPerView: 3 },
-          1024: { slidesPerView: 5 },
+          1024: { slidesPerView: 4 },
         }}
       >
         {products.map((product) => (

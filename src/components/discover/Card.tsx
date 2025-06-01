@@ -1,4 +1,4 @@
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+"use client";
 
 type Props = {
   name: string;
@@ -7,19 +7,15 @@ type Props = {
   price: number;
 };
 
-export const Card = ({ name, image, description, price }: Props) => {
+export const Card = ({ name, image, price }: Props) => {
   return (
-    <div className="bg-white w-44 h-auto shadow-xl rounded-lg p-2">
-      <img
-        src={image}
-        alt={name}
-        className="w-40 h-auto object-cover rounded-t-lg mb-4"
-      />
+    <div className="bg-white w-44 lg:w-52 h-auto shadow-xl rounded-lg p-2">
+      <div className="w-40 lg:w-48 h-56 lg:h-72 overflow-hidden rounded-t-lg mb-4">
+        <img src={image} alt={name} className="w-full h-full object-cover" />
+      </div>
       <h2 className="text-md font-semibold mb-2">{name}</h2>
-      {description && <p className="text-gray-700 mb-4">{description}</p>}
       <div className="flex justify-between items-center">
-        <span className="text-lg font-bold">${price}</span>
-        <AddShoppingCartIcon />
+        <span className="text-sm font-semibold text-gray-600">${price}</span>
       </div>
     </div>
   );
