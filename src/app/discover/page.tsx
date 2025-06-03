@@ -3,6 +3,8 @@
 import SuggestionSlider from "@/components/discover/SuggestionSlider";
 import CardsSlider from "@/components/swiper/CardsSlider";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import OffersPending from "@/components/home/OffersPending";
+import Link from "next/link";
 
 export default function Discover() {
   return (
@@ -32,10 +34,17 @@ export default function Discover() {
           <span className="text-gray-900 font-bold text-2xl pt-4 pb-2">
             Fresh finds
           </span>
-          <span className="text-orange-500 font-semibold">view all</span>
+          <Link href="/" className="text-orange-500 font-semibold">view all</Link>
         </div>
         <CardsSlider />
       </div>
+      <span className="text-gray-900 font-bold text-2xl pt-4 pb-2">
+        Latest topics
+      </span>
+      <div className="flex flex-col gap-4">
+        <OffersPending />
+        </div>
     </div>
+
   );
 }

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function Landing() {
   return (
     <section className="flex flex-col items-center p-4 lg:px-70 bg-animated-gradient min-h-screen">
@@ -15,7 +17,17 @@ export default function Landing() {
       <button className="mt-6 px-6 py-3 text-white font-semibold rounded-full bg-gradient-to-b from-[#ff7900] to-[#ff5c00] hover:brightness-110 transition">
         Start Trading Free
       </button>
-      <img src="/landing.avif" alt="landing demo" className="pt-4" />
+      <div className="w-4/5 pt-4">
+        <Image
+          src="/landing.avif"
+          alt="Offer"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="w-full h-auto"
+          priority
+        />
+      </div>
     </section>
   );
 }

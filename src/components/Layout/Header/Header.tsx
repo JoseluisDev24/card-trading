@@ -8,14 +8,14 @@ import { usePathname } from "next/navigation";
 import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 import { Search } from "../Sidebar/Search";
 import { FiCompass } from "react-icons/fi";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-    const pathname = usePathname();
+  const pathname = usePathname();
 
   const isActive = (path: string) => pathname === path;
-
-  
 
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
@@ -65,7 +65,9 @@ const Header = () => {
           <Link href={"/discover"} className="hidden lg:flex">
             <FiCompass
               className={`text-3xl ${
-                isActive("/discover") ? "text-orange-500" : "text-gray-800 opacity-80"
+                isActive("/discover")
+                  ? "text-orange-500"
+                  : "text-gray-800 opacity-80"
               }`}
             />
           </Link>
@@ -73,13 +75,28 @@ const Header = () => {
         <div className="hidden lg:flex items-center justify-center w-2/5">
           <Search />
         </div>
-
-        <Link href={"/"} className="flex items-center w-32 lg:w-36 py-2 gap-2">
-          <Image src="/logoTrade.png" width={20} height={20} alt="logo" />
-          <h1 className="text-2xl lg:text-3xl font-extrabold text-gray-900">
-            TradeUp
-          </h1>
-        </Link>
+        <div className="flex justify-between items-center gap-2">
+          <Link href={"/cart"}>
+            <IconButton>
+              <ShoppingCartOutlinedIcon
+                className={`text-gray-600 cursor-pointer hover:text-orange-500 transition duration-200${
+                  isActive("/cart")
+                    ? "text-orange-500"
+                    : "text-gray-800 opacity-80"
+                } `}
+              />
+            </IconButton>
+          </Link>
+          <Link
+            href={"/"}
+            className="flex items-center w-32 lg:w-36 py-2 gap-2"
+          >
+            <Image src="/logoTrade.png" width={20} height={20} alt="logo" />
+            <h1 className="text-2xl lg:text-3xl font-extrabold text-gray-900">
+              TradeUp
+            </h1>
+          </Link>
+        </div>
       </header>
 
       <Sidebar

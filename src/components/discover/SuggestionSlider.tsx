@@ -50,7 +50,7 @@ export default function Suggestions() {
                 priority
               />
               <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-4">
-                <div className="flex justify-center items-center bg-black/40 backdrop-blur-xs h-32 p-6 rounded-lg max-w-lg w-full">
+                <div className="flex justify-center items-center bg-black/40 h-32 p-6 rounded-lg max-w-lg w-full">
                   <p className="text-white text-center text-sm sm:text-lg md:text-xl font-semibold max-w-2xl">
                     {suggestion.text}
                   </p>

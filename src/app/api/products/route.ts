@@ -3,8 +3,6 @@ import dbConnect from "@/utils/db-connect";
 import ProductModel from "@/models/product.model";
 
 export async function GET() {
-  console.log("🔄 Iniciando GET /api/products");
-
   try {
     await dbConnect();
 

@@ -42,7 +42,7 @@ export default function Home() {
         <span className="font-bold text-lg text-gray-800">
           Trading with someone new? Premium’s on us!
         </span>
-        <span>
+        <span className="py-1">
           When either trader has zero completed trades, Premium protection is
           completely free. Enjoy a secure, worry-free experience. Welcome
           newcomers to the TradeUp community! 🤝✨
