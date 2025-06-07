@@ -12,7 +12,7 @@ export default function About() {
         <div className="flex flex-col gap-3 items-center justify-center bg-[url('/city.jpg')] bg-cover bg-center pb-16">
           <h1 className="text-4xl font-bold">Help center</h1>
           <p className="text-xl font-semibold">
-            Have questions? you're in the right place!
+            Have questions? you&apos;re in the right place!
           </p>
         </div>
 
