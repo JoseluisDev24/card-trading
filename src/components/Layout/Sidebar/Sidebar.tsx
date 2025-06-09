@@ -102,7 +102,7 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
     { label: "About", href: "/about" },
     { label: "Help", href: "/help" },
     { label: "Settings", href: "/settings" },
-    { label: "Discord", href: "/discord" },
+    { label: "Discord", href: "https://discord.com/" },
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -164,13 +164,28 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
             },
           }}
         >
-          {bottomItems.map(({ label, href }) => (
-            <Link key={label} href={href} passHref>
-              <ListItem onClick={() => toggleDrawer(false)}>
-                <ListItemText primary={label} />
-              </ListItem>
-            </Link>
-          ))}
+          {bottomItems.map(({ label, href }) =>
+    href.startsWith("http") ? (
+      <a
+        key={label}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => toggleDrawer(false)}
+        style={{ textDecoration: "none" }}
+      >
+        <ListItem>
+          <ListItemText primary={label} />
+        </ListItem>
+      </a>
+    ) : (
+      <Link key={label} href={href} passHref>
+        <ListItem onClick={() => toggleDrawer(false)}>
+          <ListItemText primary={label} />
+        </ListItem>
+      </Link>
+    )
+  )}
         </List>
       </Box>
     </Drawer>
