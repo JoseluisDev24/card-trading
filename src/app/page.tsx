@@ -17,7 +17,7 @@ export default function Landing() {
       <button className="mt-6 px-6 py-3 text-white font-semibold rounded-full bg-gradient-to-b from-[#ff7900] to-[#ff5c00] hover:brightness-110 transition">
         Start Trading Free
       </button>
-      <div className="w-4/5 pt-4">
+      <div className="w-11/12 pt-4">
         <Image
           src="/landing.avif"
           alt="Offer"

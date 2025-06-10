@@ -7,8 +7,9 @@ import OffersPending from "@/components/home/OffersPending";
 import Link from "next/link";
 
 export default function Discover() {
-  const trendingSearches = ["Pokemon", "Glaceon", "Charizard"];
-
+  const trendingSearches = ["Pokemon", "Glaceon", "Charizard", "Eevee", "Umbreon", "Vaporeon", "Flareon", "Leafeon", "Sylveon"];
+  // You can replace the above array with a dynamic fetch from an API if needed
+  // For example, you could fetch trending searches from an API endpoint
   return (
     <div>
       <div className="flex flex-col items-center justify-center pb-2">
@@ -19,11 +20,11 @@ export default function Discover() {
           <span className="text-gray-900 font-bold text-2xl py-3">
             Trending searches
           </span>
-          <div className="flex gap-2">
+          <div className="flex space-x-3 overflow-x-auto gap-2">
             {trendingSearches.map((term) => (
               <button
                 key={term}
-                className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-800 rounded-2xl text-sm font-medium hover:bg-gray-300 transition"
+                className="flex flex-shrink-0 items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-800 rounded-2xl text-sm font-medium hover:bg-gray-300 transition"
               >
                 {term}
                 <ArrowOutwardIcon className="text-lg" />

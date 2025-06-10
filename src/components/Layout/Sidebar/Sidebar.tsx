@@ -100,10 +100,10 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
 
   const bottomItems = [
     { label: "About", href: "/about" },
-    { label: "Help", href: "/help" },
+    { label: "Help", href: "/about" },
     { label: "Settings", href: "/settings" },
     { label: "Discord", href: "https://discord.com/" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "Contact Us", href: "/about" },
   ];
 
   return (

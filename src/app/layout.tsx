@@ -2,7 +2,7 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Layout/Header/Header";
 import WelcomeModal from "@/components/Layout/Modals/WelcomeModal";
-import FixedMenu from "../components/Layout/FixedMenu";
+import FixedMenu from "../components/Layout/FixedMenu/FixedMenu";
 import Footer from "../components/Layout/Footer/Footer";
 
 

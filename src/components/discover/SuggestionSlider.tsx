@@ -41,7 +41,7 @@ export default function Suggestions() {
       >
         {suggestions.map((suggestion) => (
           <SwiperSlide key={suggestion.id}>
-            <div className="relative w-full h-48 sm:h-64 rounded-b-2xl overflow-hidden">
+            <div className="relative w-full h-54 sm:h-64 rounded-b-2xl overflow-hidden">
               <Image
                 src={suggestion.image}
                 alt={`Slide ${suggestion.id}`}
@@ -50,8 +50,8 @@ export default function Suggestions() {
                 priority
               />
               <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-4">
-                <div className="flex justify-center items-center bg-black/40 h-32 lg:h-44 p-6 rounded-xl max-w-xl w-full">
-                  <p className="text-white text-center text-lg md:text-4xl font-semibold max-w-2xl">
+                <div className="flex justify-center items-center bg-black/40 h-36 lg:h-44 p-6 rounded-xl max-w-xl w-full">
+                  <p className="text-white text-center text-xl md:text-4xl font-semibold max-w-2xl">
                     {suggestion.text}
                   </p>
                 </div>
