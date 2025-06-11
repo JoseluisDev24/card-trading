@@ -31,7 +31,7 @@ const suggestions = [
 
 export default function Suggestions() {
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full mx-auto px-10">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
@@ -41,7 +41,7 @@ export default function Suggestions() {
       >
         {suggestions.map((suggestion) => (
           <SwiperSlide key={suggestion.id}>
-            <div className="relative w-full h-54 sm:h-64 rounded-b-2xl overflow-hidden">
+            <div className="relative w-full h-54 sm:h-64 lg:h-96 rounded-b-2xl overflow-hidden">
               <Image
                 src={suggestion.image}
                 alt={`Slide ${suggestion.id}`}

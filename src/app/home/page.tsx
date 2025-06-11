@@ -29,6 +29,7 @@ export default function Home() {
           backgroundColor: "#ee744029",
           color: "#a75f3b",
           borderRadius: "16px",
+          fontSize: "0.9rem",
           fontWeight: 600,
           "&:hover": {
             backgroundColor: "#ee944029",
