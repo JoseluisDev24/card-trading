@@ -31,7 +31,7 @@ const suggestions = [
 
 export default function Suggestions() {
   return (
-    <div className="w-full mx-auto px-10">
+    <div className="w-full mx-auto lg:px-10">
       <Swiper
         modules={[Autoplay, Pagination]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}

@@ -1,4 +1,4 @@
-export default function About() {
+export default function Help() {
   const sections = [
     { title: "How it works" },
     { title: "Security" },

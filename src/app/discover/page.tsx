@@ -71,7 +71,7 @@ export default function Discover() {
               <img
                 src={poke.image}
                 alt={poke.name}
-                className="w-24 h-24 object-contain rounded-full border border-gray-300 bg-white transition-transform duration-300 group-hover:scale-105"
+                className="w-18 h-18 object-contain rounded-full border border-gray-300 bg-white transition-transform duration-300 group-hover:scale-105"
               />
               <span className="text-sm mt-1 text-gray-700 font-semibold transition-colors duration-300 group-hover:text-orange-500">
                 {poke.name}

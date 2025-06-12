@@ -99,11 +99,11 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
   const topItems = [...desktopItems, ...baseItems];
 
   const bottomItems = [
-    { label: "About", href: "/about" },
-    { label: "Help", href: "/about" },
+    { label: "About", href: "/help" },
+    { label: "Help", href: "/help" },
     { label: "Settings", href: "/settings" },
     { label: "Discord", href: "https://discord.com/" },
-    { label: "Contact Us", href: "/about" },
+    { label: "Contact Us", href: "/help" },
   ];
 
   return (
