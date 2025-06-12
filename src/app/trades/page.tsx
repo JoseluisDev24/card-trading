@@ -21,7 +21,7 @@ export default function TradesTabs() {
 
   return (
     <Box className="p-4 h-80 flex flex-col lg:justify-center gap-6">
-      <Box className="bg-white rounded-full shadow border border-gray-200 w-fit mx-auto px-2">
+      <Box className="bg-white rounded-full shadow border border-gray-200 w-fit">
         <Tabs
           value={value}
           onChange={(_, newVal) => setValue(newVal)}
