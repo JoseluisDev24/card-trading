@@ -7,6 +7,7 @@ import OffersPending from "@/components/home/OffersPending";
 import Link from "next/link";
 import { filterPokemon } from "@/data/filterPokemon";
 
+
 export default function Discover() {
   const trendingSearches = [
     "Pokemon",

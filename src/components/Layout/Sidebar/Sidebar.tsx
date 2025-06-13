@@ -38,7 +38,7 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
     {
       icon: <PeopleAltOutlineIcon fontSize="large" sx={{ color: "#001F3F" }} />,
       label: "Search users",
-      href: "/search",
+      href: "/users",
       color: "#001F3F",
       fontWeight: 600,
     },
