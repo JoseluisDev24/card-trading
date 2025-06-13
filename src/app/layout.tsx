@@ -11,6 +11,20 @@ const nunito = Nunito({ subsets: ["latin"] });
 export const metadata = {
   title: "Trading Cards",
   description: "trading cards web site",
+  openGraph: {
+    title: "Mi Tienda Online",
+    description: "Descubrí productos increíbles con envío gratis.",
+    url: "https://card-trading-two.vercel.app",
+    images: [
+      {
+        url: "https://card-trading-two.vercel.app/logoTrade.png", 
+        width: 1200,
+        height: 630,
+        alt: "Vista previa de Mi Tienda Online",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
