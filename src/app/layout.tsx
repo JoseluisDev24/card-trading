@@ -12,8 +12,8 @@ export const metadata = {
   title: "Trading Cards",
   description: "trading cards web site",
   openGraph: {
-    title: "Mi Tienda Online",
-    description: "Descubrí productos increíbles con envío gratis.",
+    title: "Card Trading",
+    description: "Descubrí las mejores cartas de Pokémon y más",
     url: "https://card-trading-two.vercel.app",
     images: [
       {
