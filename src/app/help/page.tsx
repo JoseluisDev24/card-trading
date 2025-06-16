@@ -1,10 +1,10 @@
+"use client";
+
+import { useState } from "react";
+import { sections } from "@/data/help/helpSections";
+
 export default function Help() {
-  const sections = [
-    { title: "How it works" },
-    { title: "Security" },
-    { title: "FAQ" },
-    { title: "About us" },
-  ];
+  const [active, setActive] = useState<string | null>("How it works");
 
   return (
     <div className="flex flex-col items-center min-h-screen py-6 px-4 lg:px-70 lg:py-14 bg-white">
@@ -20,24 +20,30 @@ export default function Help() {
           {sections.map((section) => (
             <div
               key={section.title}
-              className="flex justify-center items-center h-20 p-4 bg-gray-100 rounded-3xl shadow hover:shadow-lg transition-shadow w-full min-w-[165px] whitespace-nowrap cursor-pointer hover:bg-gray-200"
+              className={`flex justify-center items-center h-24 p-4 rounded-3xl shadow transition-all w-full min-w-[165px] whitespace-nowrap cursor-pointer 
+                ${
+                  active === section.title
+                    ? "bg-gray-900 text-white"
+                    : "bg-gray-100 hover:bg-gray-200 hover:shadow-lg"
+                }`}
+              onClick={() => setActive(section.title)}
             >
-              <h2 className="text-2xl font-bold text-gray-800">
+              <h2
+                className={` ${
+                  active === section.title
+                    ? "text-2xl font-bold"
+                    : "text-xl font-bold"
+                }`}
+              >
                 {section.title}
               </h2>
             </div>
           ))}
         </div>
+        <div className="flex flex-col max-w-xs lg:max-w-4xl">
+          {sections.find((s) => s.title === active)?.content}
+        </div>
       </section>
-      <div className="flex flex-col">
-        <p className="text-3xl font-bold mt-6">How does Trade Up work? </p>
-        <p className="text-lg">
-          TradeUp reduces the risk of fraud by acting as a trusted plataform
-          that facilitates secure transactions. It ensures both parties are
-          satisfied before completing the trade
-        </p>
-        <p className="text-2xl font-bold py-2">1. Initiate Trade</p>
-      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import CardsSlider from "@/components/swiper/CardsSlider";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import OffersPending from "@/components/home/OffersPending";
 import Link from "next/link";
-import { filterPokemon } from "@/data/filterPokemon";
+import { filterPokemon } from "@/data/discover/filterPokemon";
 
 
 export default function Discover() {
