@@ -1,7 +1,6 @@
 import Link from "next/link";
 import ProtectionTabs from "@/components/help/ProtectionTabs";
 
-
 export const sections = [
   {
     title: "How it works",
@@ -37,7 +36,7 @@ export const sections = [
   {
     title: "Security",
     content: (
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <p className="text-3xl font-bold pt-6 text-center">
           Discover the safest path to your trade
         </p>
@@ -49,10 +48,13 @@ export const sections = [
     title: "FAQ",
     content: (
       <div className="flex flex-col">
-        <p className="text-3xl font-bold pt-6">Frequently Asked Questions</p>
-        <p className="text-lg">
-          Here are some common questions we get asked about TradeUp
-        </p>
+        <div className="flex flex-col items-center">
+          <p className="text-3xl font-bold pt-12">Frequently Asked Questions</p>
+          <p className="text-lg">
+            Here are some common questions we get asked about TradeUp
+          </p>
+        </div>
+
         <ul className="list-disc pl-6 pt-4">
           <li>
             <Link href={"/"} className="text-orange-600 font-bold">

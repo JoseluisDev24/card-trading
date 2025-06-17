@@ -6,17 +6,17 @@ export default function ProtectionTabs() {
   const [tab, setTab] = useState<"basic" | "premium">("basic");
 
   return (
-    <div className="w-full max-w-xl mx-auto mt-6">
+    <div className="w-full max-w-2xl lg:max-w-4xl mx-auto mt-6">
       <div className="relative flex rounded-full bg-gray-100 p-1 overflow-hidden">
         <div
-          className={`absolute top-1 bottom-1 w-1/2 rounded-full transition-all duration-300 ease-in-out ${
+          className={`absolute top-1 bottom-1 w-1/2 lg:w-2/3 rounded-full transition-all duration-300 ease-in-out ${
             tab === "basic" ? "left-1 bg-green-100" : "left-1/2 bg-purple-200"
           }`}
         />
 
         <button
           onClick={() => setTab("basic")}
-          className={`w-1/2 z-10 py-2 rounded-full font-semibold transition-colors duration-300 cursor-pointer ${
+          className={`w-1/2 lg:w-2/3 z-10 py-2 rounded-full font-semibold transition-colors duration-300 cursor-pointer ${
             tab === "basic" ? "text-green-900" : "text-gray-500"
           }`}
         >
@@ -25,7 +25,7 @@ export default function ProtectionTabs() {
 
         <button
           onClick={() => setTab("premium")}
-          className={`w-1/2 z-10 py-2 rounded-full font-semibold transition-colors duration-300 cursor-pointer ${
+          className={`w-1/2 lg:w-2/3 z-10 py-2 rounded-full font-semibold transition-colors duration-300 cursor-pointer ${
             tab === "premium" ? "text-purple-900" : "text-gray-500"
           }`}
         >

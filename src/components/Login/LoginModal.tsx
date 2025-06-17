@@ -14,6 +14,8 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import Image from "next/image";
+import { GrClose } from "react-icons/gr";
+
 
 export default function LoginModal({
   open,
@@ -33,14 +35,29 @@ export default function LoginModal({
       open={open}
       onClose={onClose}
       fullWidth
-      maxWidth="lg"
-      scroll="body"
+      maxWidth="sm"
+      scroll="paper"
       slotProps={{
         paper: {
           className: "rounded-xl border border-gray-200 shadow-lg",
           sx: {
             width: "390px",
-            height: "auto",
+            height: "87vh",
+            margin: 0,
+            "@media (min-width: 1024px)": {
+              width: "450px",
+              height: "100vh",
+              overflowY: "hidden",
+            },
+          },
+        },
+        container: {
+          sx: {
+            margin: 2,
+            alignItems: "flex-start",
+            "@media (min-width: 1024px)": {
+              alignItems: "center",
+            },
           },
         },
         backdrop: {
@@ -53,11 +70,33 @@ export default function LoginModal({
         sx={{
           paddingX: "2rem",
           paddingY: "2rem",
-          overflowY: "visible",
-          display: "block",
+          overflowY: "auto",
+          height: "100%",
+          flexGrow: 1,
+          display: "flex",
+          flexDirection: "column",
         }}
       >
-        <div className="flex justify-between items-center mb-6">
+        <IconButton
+          onClick={onClose}
+          aria-label="close"
+          sx={{
+            position: "absolute",
+            top: 12,
+            left: 12,
+            color: "gray",
+            zIndex: 10,
+            bgcolor: "background.paper",
+            "&:hover": { bgcolor: "grey.200" },
+            boxShadow: 1,
+            width: 32,
+            height: 32,
+          }}
+        >
+          <GrClose />
+        </IconButton>
+
+        <div className="flex justify-between items-center my-4">
           <div className="flex items-center justify-center space-x-2">
             <Image
               src="/logoTrade.png"
@@ -158,6 +197,7 @@ export default function LoginModal({
             height: "48px",
             fontSize: "1rem",
             fontWeight: "bold",
+            marginBottom: "1rem",
           }}
           className=" text-white py-2"
         >

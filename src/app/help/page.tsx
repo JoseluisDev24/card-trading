@@ -7,11 +7,11 @@ export default function Help() {
   const [active, setActive] = useState<string | null>("How it works");
 
   return (
-    <div className="flex flex-col items-center min-h-screen py-6 px-4 lg:px-70 lg:py-14 bg-white">
-      <section>
-        <div className="flex flex-col gap-3 items-center justify-center bg-[url('/city.jpg')] bg-cover bg-center pb-16">
+    <div className="flex flex-col items-center min-h-screen py-6 px-4 lg:py-8 bg-white">
+      <section className="w-full flex flex-col items-center">
+        <div className="flex flex-col gap-3 items-center justify-center bg-[url('/city.jpg')] bg-cover bg-center pb-16 lg:h-56">
           <h1 className="text-4xl font-bold">Help center</h1>
-          <p className="text-xl font-semibold">
+          <p className="text-2xl font-semibold">
             Have questions? you&apos;re in the right place!
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function Help() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col max-w-xs lg:max-w-4xl">
+        <div className="flex flex-col max-w-xs md:max-w-4xl">
           {sections.find((s) => s.title === active)?.content}
         </div>
       </section>

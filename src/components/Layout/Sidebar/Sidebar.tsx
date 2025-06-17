@@ -53,7 +53,7 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
         />
       ),
       label: "Sign Up",
-      href: "/signup",
+      href: "/login",
       color: "#050F0F",
     },
     {
