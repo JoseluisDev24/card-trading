@@ -36,6 +36,7 @@ const Header = () => {
               height={30}
               alt="menu"
               className="opacity-80"
+              priority
             />
           </IconButton>
 

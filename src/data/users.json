@@ -1,0 +1,12 @@
+[
+  {
+    "id": "u1",
+    "name": "Juan Pérez",
+    "avatar": "/avatars/juan.png"
+  },
+  {
+    "id": "u2",
+    "name": "Ana López",
+    "avatar": "/avatars/ana.png"
+  }
+]

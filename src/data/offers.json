@@ -1,0 +1,10 @@
+[
+  {
+    "id": "o1",
+    "fromUserId": "u1",
+    "toUserId": "u2",
+    "offeredCardId": "c1",
+    "requestedCardId": "c2",
+    "status": "pending"
+  }
+]

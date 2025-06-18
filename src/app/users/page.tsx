@@ -12,36 +12,42 @@ const users = [
     image: "https://unavatar.io/github/JoseluisDev24",
     listings: 276,
     trades: 256,
+    id: 1,
   },
   {
     name: "Wubungus",
     image: "https://unavatar.io/github/GonzaloRosano",
     listings: 179,
     trades: 162,
+    id: 2,
   },
   {
     name: "Matt",
     image: "/cards/packcard.jpeg",
     listings: 6,
     trades: 114,
+    id: 3,
   },
   {
     name: "Paolos",
     image: "https://unavatar.io/github/JoseluisDev24",
     listings: 276,
     trades: 256,
+    id: 4,
   },
   {
     name: "Wubungus",
     image: "https://unavatar.io/github/GonzaloRosano",
     listings: 179,
     trades: 162,
+    id: 5,
   },
   {
     name: "Matt",
     image: "/cards/packcard.jpeg",
     listings: 6,
     trades: 114,
+    id: 6,
   },
 ];
 
@@ -55,10 +61,10 @@ export default function UsersPage() {
       <div className="flex items-center justify-center mt-4 mb-8 w-full lg:w-80">
         <SearchUsers />
       </div>
-      <div className="flex justify-center w-full px-2">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 lg:gap-x-16 lg:gap-y-6 w-full">
+      <div className="flex justify-center w-full px-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 lg:gap-x-16 lg:gap-y-6 w-full">
           {users.map((user) => (
-            <UserCard key={user.name} {...user} />
+            <UserCard key={user.id} {...user} />
           ))}
         </div>
       </div>

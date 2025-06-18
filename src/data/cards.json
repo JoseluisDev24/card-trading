@@ -1,0 +1,16 @@
+[
+  {
+    "id": "c1",
+    "name": "Blue-Eyes White Dragon",
+    "image": "/cards/blue-eyes.png",
+    "description": "Legendary dragon with devastating power.",
+    "price": 100
+  },
+  {
+    "id": "c2",
+    "name": "Dark Magician",
+    "image": "/cards/dark-magician.png",
+    "description": "The ultimate wizard in terms of attack and defense.",
+    "price": 80
+  }
+]

@@ -103,7 +103,7 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
     { label: "Help", href: "/help" },
     { label: "Settings", href: "/settings" },
     { label: "Discord", href: "https://discord.com/" },
-    { label: "Contact Us", href: "/help" },
+    { label: "Contact Us", href: "/help?contact=true" },
   ];
 
   return (

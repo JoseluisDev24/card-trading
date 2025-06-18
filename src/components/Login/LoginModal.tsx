@@ -42,7 +42,7 @@ export default function LoginModal({
           className: "rounded-xl border border-gray-200 shadow-lg",
           sx: {
             width: "390px",
-            height: "87vh",
+            height: "84vh",
             margin: 0,
             "@media (min-width: 1024px)": {
               width: "450px",
