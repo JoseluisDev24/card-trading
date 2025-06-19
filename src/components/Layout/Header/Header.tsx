@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 import { Search } from "../Sidebar/Search";
 import { FiCompass } from "react-icons/fi";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+// import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 
 const Header = () => {
@@ -77,7 +77,7 @@ const Header = () => {
           <Search />
         </div>
         <div className="flex justify-between items-center gap-2">
-          <Link href={"/cart"}>
+          {/* <Link href={"/cart"}>
             <IconButton>
               <ShoppingCartOutlinedIcon
                 className={`text-gray-600 cursor-pointer hover:text-orange-500 transition duration-200${
@@ -87,7 +87,7 @@ const Header = () => {
                 } `}
               />
             </IconButton>
-          </Link>
+          </Link> */}
           <Link
             href={"/"}
             className="flex items-center w-32 lg:w-36 py-2 gap-2"

@@ -16,7 +16,6 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import Image from "next/image";
 import { GrClose } from "react-icons/gr";
 
-
 export default function LoginModal({
   open,
   onClose,
@@ -38,11 +37,16 @@ export default function LoginModal({
       maxWidth="sm"
       scroll="paper"
       slotProps={{
+        root: {
+          sx: {
+            zIndex: 1600, 
+          },
+        },
         paper: {
           className: "rounded-xl border border-gray-200 shadow-lg",
           sx: {
             width: "390px",
-            height: "84vh",
+            height: "100vh",
             margin: 0,
             "@media (min-width: 1024px)": {
               width: "450px",
@@ -53,11 +57,8 @@ export default function LoginModal({
         },
         container: {
           sx: {
-            margin: 2,
-            alignItems: "flex-start",
-            "@media (min-width: 1024px)": {
-              alignItems: "center",
-            },
+            margin: 1,
+           marginTop: "-2px",
           },
         },
         backdrop: {

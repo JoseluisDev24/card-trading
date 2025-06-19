@@ -45,9 +45,9 @@ export default function HelpContent() {
             ))}
           </div>
 
-          <div className="flex flex-col max-w-xs md:max-w-4xl">
+          <div className="flex flex-col max-w-md md:max-w-4xl">
             {contactMode ? (
-              <Box className="w-full max-w-md lg:max-w-xl mx-auto px-4 py-8">
+              <Box className="max-w-md lg:max-w-xl mx-auto px-2 py-8">
                 <Typography variant="h4" className="font-bold text-center mb-4">
                   Contact us
                 </Typography>

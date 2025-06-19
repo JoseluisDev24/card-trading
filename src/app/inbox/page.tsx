@@ -14,7 +14,7 @@ export default function Inbox() {
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-gray-100">
-      <div className="relative bg-purple-500 flex items-center h-14 px-4">
+      <div className="relative bg-[rgba(217,201,249,1)] flex items-center h-14 px-4">
         <IconButton
           onClick={handleClose}
           aria-label="Close"
@@ -32,11 +32,11 @@ export default function Inbox() {
 
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2 text-fuchsia-950">
           <ChatBubbleOutlineIcon />
-          <h1 className="text-2xl font-semibold">Chats</h1>
+          <h1 className="text-xl font-bold">Chats</h1>
         </div>
       </div>
 
-      <div className="p-4 text-lg text-gray-600 flex-1 overflow-auto">
+      <div className="px-4 py-3 text-lg text-gray-500 flex-1 overflow-auto">
         Your messages will appear here.
       </div>
     </div>

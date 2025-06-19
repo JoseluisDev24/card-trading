@@ -117,8 +117,18 @@ const FixedMenu = () => {
             href="/inbox"
             className="flex flex-col items-center gap-1 opacity-80"
           >
-            <PiChatCircleBold className="text-3xl" />
-            <span className="text-xs">Inbox</span>
+            <PiChatCircleBold
+              className={`text-3xl ${
+                isActive("/inbox") ? "text-orange-500" : "opacity-90"
+              }`}
+            />
+            <span
+              className={`text-xs ${
+                isActive("/inbox") ? "text-orange-500" : "opacity-90"
+              }`}
+            >
+              Inbox
+            </span>
           </Link>
 
           <Link href="/trades" className="flex flex-col items-center gap-1">

@@ -19,11 +19,12 @@ const WelcomeModal = () => {
   return (
     <>
       <div className="fixed inset-0 bg-black/70 z-[1600]" />
-      <div className="fixed inset-0 z-[1700] flex items-center justify-center">
-        <div className="bg-[#F3FCFF] fixed top-12 rounded-3xl shadow-2xl p-4 w-[95%] h-[68%] lg:w-[45%] lg:h-[55%] lg:top-28 text-center">
+      <div className="fixed inset-0 z-[1700] flex items-center justify-center px-4">
+        <div className="bg-[#F3FCFF] w-full max-w-[95%] lg:max-w-[45%] rounded-3xl shadow-2xl p-4 max-h-[90vh] overflow-y-auto text-center">
           <h2 className="text-3xl font-semibold mb-4">
             🚀 What&apos;s New on TradeUp!
           </h2>
+
           <div className="bg-[#d5f8ff]/40 rounded-xl shadow-xl p-2 md:px-3 py-2 text-left text-sm text-gray-800 space-y-4 lg:space-y-1">
             <div>
               <p className="font-bold text-lg py-1">
