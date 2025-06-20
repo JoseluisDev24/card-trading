@@ -1,4 +1,6 @@
 [
-  { "userId": "u1", "cardId": "c1" },
-  { "userId": "u2", "cardId": "c2" }
+  { "userId": "1", "cardId": "c1" },
+  { "userId": "2", "cardId": "c3" },
+  { "userId": "2", "cardId": "c4" },
+  { "userId": "2", "cardId": "c2" }
 ]

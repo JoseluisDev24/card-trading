@@ -2,6 +2,8 @@ import { Button } from "@mui/material";
 import { IoFilter } from "react-icons/io5";
 import OffersPending from "@/components/home/OffersPending";
 import Link from "next/link";
+import MyCards from "@/components/home/MyCards";
+
 
 export const metadata = {
   title: "TradeUp - Pokemon card trading, simplified",
@@ -15,10 +17,9 @@ export default function Home() {
         <h1 className="text-2xl font-bold text-gray-800">Public feed</h1>
         <div className="flex items-center justify-center gap-2">
           <Link href="/">
-          <button className="px-3 py-1 text-white font-bold rounded-full bg-gradient-to-b from-[#ff7900] to-[#ff5c00] hover:brightness-110 transition hidden lg:flex justify-between gap-1 items-center cursor-pointer">
-            +
-            Create post
-          </button>
+            <button className="px-3 py-1 text-white font-bold rounded-full bg-gradient-to-b from-[#ff7900] to-[#ff5c00] hover:brightness-110 transition hidden lg:flex justify-between gap-1 items-center cursor-pointer">
+              + Create post
+            </button>
           </Link>
           <button className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 text-gray-800 rounded-lg text-sm font-medium hover:bg-gray-300 transition">
             <IoFilter className="text-lg" />
@@ -53,6 +54,7 @@ export default function Home() {
         </span>
       </div>
       <div className="max-h-1 min-h-1 bg-gray-200 w-full"></div>
+      <MyCards />
       <OffersPending />
       <OffersPending />
     </div>

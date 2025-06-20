@@ -2,15 +2,29 @@
   {
     "id": "c1",
     "name": "Blue-Eyes White Dragon",
-    "image": "/cards/blue-eyes.png",
+    "image": "/cards/agumon.jpeg",
     "description": "Legendary dragon with devastating power.",
     "price": 100
   },
   {
     "id": "c2",
     "name": "Dark Magician",
-    "image": "/cards/dark-magician.png",
+    "image": "/cards/packcard.jpeg",
     "description": "The ultimate wizard in terms of attack and defense.",
     "price": 80
+  },
+  {
+    "id": "c3",
+    "name": "Blue-Eyes White Dragon",
+    "image": "/cards/agumon.jpeg",
+    "description": "Legendary dragon with devastating power.",
+    "price": 100
+  },
+  {
+    "id": "c4",
+    "name": "Red-Eyes Black Dragon",
+    "image": "/cards/pichu.webp",
+    "description": "A ferocious dragon with a fiery breath.",
+    "price": 90
   }
 ]

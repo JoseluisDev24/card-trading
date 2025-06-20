@@ -1,12 +1,12 @@
 [
   {
-    "id": "u1",
+    "id": "1",
     "name": "Juan Pérez",
-    "avatar": "/avatars/juan.png"
+    "avatar": "https://unavatar.io/github/GonzaloRosano"
   },
   {
-    "id": "u2",
-    "name": "Ana López",
-    "avatar": "/avatars/ana.png"
+    "id": "2",
+    "name": "Jose Luis",
+    "avatar": "https://unavatar.io/github/JoseluisDev24"
   }
 ]
