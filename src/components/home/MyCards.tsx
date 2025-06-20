@@ -4,9 +4,9 @@ import users from "@/data/users.json";
 import userCards from "@/data/userCards.json";
 import cards from "@/data/cards.json";
 
+import type { User } from "@/types/user";
 import type { UserCard } from "@/types/UserCard";
 import type { Card } from "@/types/Card";
-import { User } from "@/types/User";
 
 const currentUserId = "2";
 
