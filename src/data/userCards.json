@@ -1,6 +1,18 @@
 [
   { "userId": "1", "cardId": "c1" },
+  { "userId": "2", "cardId": "c2" },
+  { "userId": "1", "cardId": "c5" },
+  { "userId": "1", "cardId": "c6" },
+  { "userId": "2", "cardId": "c7" },
+  { "userId": "2", "cardId": "c8" },
+  { "userId": "1", "cardId": "c3" },
+  { "userId": "1", "cardId": "c4" },
+  { "userId": "2", "cardId": "c1" },
+  { "userId": "2", "cardId": "c2" },
+  { "userId": "2", "cardId": "c5" },
+  { "userId": "2", "cardId": "c6" },
+  { "userId": "1", "cardId": "c7" },
+  { "userId": "1", "cardId": "c8" },
   { "userId": "2", "cardId": "c3" },
-  { "userId": "2", "cardId": "c4" },
-  { "userId": "2", "cardId": "c2" }
+  { "userId": "2", "cardId": "c4" }
 ]

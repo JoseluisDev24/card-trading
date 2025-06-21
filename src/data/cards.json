@@ -1,7 +1,7 @@
 [
   {
     "id": "c1",
-    "name": "Blue-Eyes White Dragon",
+    "name": "Agumon",
     "image": "/cards/agumon.jpeg",
     "description": "Legendary dragon with devastating power.",
     "price": 100
@@ -15,16 +15,44 @@
   },
   {
     "id": "c3",
-    "name": "Blue-Eyes White Dragon",
-    "image": "/cards/agumon.jpeg",
+    "name": "Proximamon the Legendary Dragon",
+    "image": "/cards/proximamon.jpeg",
     "description": "Legendary dragon with devastating power.",
     "price": 100
   },
   {
     "id": "c4",
-    "name": "Red-Eyes Black Dragon",
-    "image": "/cards/pichu.webp",
+    "name": "Gabumon the Fierce Dragon",
+    "image": "/cards/gabumon.webp",
     "description": "A ferocious dragon with a fiery breath.",
     "price": 90
+  },
+  {
+    "id": "c5",
+    "name": "skeledirge the Forbidden One",
+    "image": "/cards/skeledirge.png",
+    "description": "The forbidden one, when all parts are assembled, guarantees victory.",
+    "price": 150
+  },
+  {
+    "id": "c6",
+    "name": "Ulfo the Dark Master",
+    "image": "/cards/ulfo.jpg",
+    "description": "A powerful monster with a dark aura.",
+    "price": 70
+  },
+  {
+    "id": "c7",
+    "name": "Feraligatr the Triple Dragon",
+    "image": "/cards/feraligatr.jpeg",
+    "description": "A fusion of three Blue-Eyes White Dragons, incredibly powerful.",
+    "price": 200
+  },
+  {
+    "id": "c8",
+    "name": "Charizard the Dragon Slayer",
+    "image": "/cards/charizard.avif",
+    "description": "A fusion of Dark Magician and Buster Blader, strong against dragons.",
+    "price": 120
   }
 ]
