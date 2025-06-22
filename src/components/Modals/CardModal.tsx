@@ -25,8 +25,8 @@ export default function CardModal({
 
   return (
     <>
-      <div className="fixed inset-0 z-50 flex items-center justify-center px-2 md:px-4">
-        <div className="bg-white rounded-2xl shadow-xl shadow-black/40 w-full h-[84vh] overflow-auto md:max-w-[60vw] md:max-h-[68vh] flex flex-col lg:flex-row items-center justify-center gap-4  lg:gap-8 relative">
+      <div className="fixed inset-0 z-50 flex items-center justify-center px-2 sm: sm:px-4">
+        <div className="bg-white rounded-2xl shadow-xl shadow-black/40 w-full h-[84vh] sm:w-[80vw] overflow-auto md:max-w-[60vw] md:max-h-[68vh] flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 lg:gap-8 relative sm:p-6 lg:p-8">
           <button
             onClick={onClose}
             className="absolute top-4 right-6 text-gray-400 hover:text-black text-3xl lg:text-4xl font-bold cursor-pointer"
@@ -37,7 +37,7 @@ export default function CardModal({
           <img
             src={card.image}
             alt={card.name}
-            className="w-54 h-70 lg:w-80 lg:h-[28rem] object-cover rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl shadow-black/20 "
+            className="w-54 h-70 lg:w-76 lg:h-96 object-cover rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl shadow-black/20"
           />
 
           <div className="text-center lg:text-start max-w-lg lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-4 px-2">
