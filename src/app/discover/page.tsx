@@ -3,10 +3,9 @@
 import SuggestionSlider from "@/components/discover/SuggestionSlider";
 import CardsSlider from "@/components/swiper/CardsSlider";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import OffersPending from "@/components/home/OffersPending";
+import OffersPending from "@/components/offers/OffersPending";
 import Link from "next/link";
 import { filterPokemon } from "@/data/discover/filterPokemon";
-
 
 export default function Discover() {
   const trendingSearches = [
@@ -22,7 +21,7 @@ export default function Discover() {
   ];
   // You can replace the above array with a dynamic fetch from an API if needed
   // For example, you could fetch trending searches from an API endpoint
-  
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center pb-2">

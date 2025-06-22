@@ -1,10 +1,10 @@
 [
   {
-    "id": "o1",
-    "fromUserId": "u1",
-    "toUserId": "u2",
-    "offeredCardId": "c1",
-    "requestedCardId": "c2",
+    "id": "oferta1",
+    "fromUserId": "1",
+    "toUserId": "2",
+    "offeredCardId": "card1",
+    "requestedCardId": "card2",
     "status": "pending"
   }
 ]

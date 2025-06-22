@@ -4,6 +4,7 @@
     "name": "Agumon",
     "image": "/cards/agumon.jpeg",
     "description": "Legendary dragon with devastating power.",
+    "status": "available",
     "price": 100
   },
   {
@@ -11,6 +12,7 @@
     "name": "Dark Magician",
     "image": "/cards/packcard.jpeg",
     "description": "The ultimate wizard in terms of attack and defense.",
+    "status": "available",
     "price": 80
   },
   {
@@ -18,6 +20,7 @@
     "name": "Proximamon the Legendary Dragon",
     "image": "/cards/proximamon.jpeg",
     "description": "Legendary dragon with devastating power.",
+    "status": "available",
     "price": 100
   },
   {
@@ -25,6 +28,7 @@
     "name": "Gabumon the Fierce Dragon",
     "image": "/cards/gabumon.webp",
     "description": "A ferocious dragon with a fiery breath.",
+    "status": "available",
     "price": 90
   },
   {
@@ -32,6 +36,7 @@
     "name": "skeledirge the Forbidden One",
     "image": "/cards/skeledirge.png",
     "description": "The forbidden one, when all parts are assembled, guarantees victory.",
+    "status": "available",
     "price": 150
   },
   {
@@ -39,6 +44,7 @@
     "name": "Ulfo the Dark Master",
     "image": "/cards/ulfo.jpg",
     "description": "A powerful monster with a dark aura.",
+    "status": "available",
     "price": 70
   },
   {
@@ -46,6 +52,7 @@
     "name": "Feraligatr the Triple Dragon",
     "image": "/cards/feraligatr.jpeg",
     "description": "A fusion of three Blue-Eyes White Dragons, incredibly powerful.",
+    "status": "available",
     "price": 200
   },
   {
@@ -53,6 +60,7 @@
     "name": "Charizard the Dragon Slayer",
     "image": "/cards/charizard.avif",
     "description": "A fusion of Dark Magician and Buster Blader, strong against dragons.",
+    "status": "available",
     "price": 120
   }
 ]

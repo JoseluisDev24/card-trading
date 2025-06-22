@@ -1,9 +1,8 @@
 import { Button } from "@mui/material";
 import { IoFilter } from "react-icons/io5";
-import OffersPending from "@/components/home/OffersPending";
+import OffersPending from "@/components/offers/OffersPending";
 import Link from "next/link";
 import MyCards from "@/components/home/MyCards";
-
 
 export const metadata = {
   title: "TradeUp - Pokemon card trading, simplified",

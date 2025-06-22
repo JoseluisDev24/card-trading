@@ -10,7 +10,7 @@ type Props = {
 
 export default function UserCard({ name, image, listings, trades }: Props) {
   return (
-    <div className="flex bg-gray-100 rounded-xl overflow-hidden shadow-sm mb-4 h-28 lg:h-40">
+    <div className="flex bg-gray-100 rounded-xl overflow-hidden shadow-lg mb-4 h-28 lg:h-40">
       <div className="relative w-32 lg:w-40 h-full flex-shrink-0">
         <Image
           src={image}
