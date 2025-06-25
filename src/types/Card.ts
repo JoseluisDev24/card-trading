@@ -4,6 +4,6 @@ export type Card = {
   name: string;
   image: string;
   description: string;
-  status: "available" | "pending" | "sold";
+  grade: "Mint" | "Near Mint" | "Good";
   price: number;
 };

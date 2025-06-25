@@ -3,6 +3,8 @@ import { IoFilter } from "react-icons/io5";
 import OffersPending from "@/components/offers/OffersPending";
 import Link from "next/link";
 import MyCards from "@/components/home/MyCards";
+import OtherUsersCards from "@/components/Users/OtherUsersCards";
+
 
 export const metadata = {
   title: "TradeUp - Pokemon card trading, simplified",
@@ -10,6 +12,7 @@ export const metadata = {
 };
 
 export default function Home() {
+
   return (
     <div className="flex flex-col min-h-screen p-4 lg:px-70 lg:py-14 bg-white">
       <div className="flex items-center justify-between mb-4">
@@ -54,6 +57,7 @@ export default function Home() {
       </div>
       <div className="max-h-1 min-h-1 bg-gray-200 w-full"></div>
       <MyCards />
+      <OtherUsersCards />;
       <OffersPending />
       <OffersPending />
     </div>

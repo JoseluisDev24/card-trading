@@ -40,7 +40,7 @@ export default function CardModal({
             className="w-54 h-70 lg:w-76 lg:h-96 object-cover rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl shadow-black/20"
           />
 
-          <div className="text-center lg:text-start max-w-lg lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-4 px-2">
+          <div className="text-center max-w-lg lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-4 px-2">
             <h2 className="text-2xl lg:text-4xl font-bold pb-2">{card.name}</h2>
 
             {card.description && (
@@ -51,18 +51,16 @@ export default function CardModal({
 
             <span
               className={`inline-block lg:text-xl font-medium px-4 py-1 mb-4 rounded-full ${
-                card.status === "available"
+                card.grade === "Mint"
                   ? "bg-green-100 text-green-700"
-                  : card.status === "pending"
-                  ? "bg-yellow-100 text-yellow-700"
-                  : "bg-red-100 text-red-700"
+                  : card.grade === "Near Mint"
+                  ? "bg-green-100 text-green-700"
+                  : card.grade === "Good"
+                  ? "bg-yellow-100 text-yellow-400"
+                  : "bg-red-100 text-black"
               }`}
             >
-              {card.status === "available"
-                ? "Disponible"
-                : card.status === "pending"
-                ? "Pendiente"
-                : "Vendida"}
+              {card.grade}
             </span>
 
             <div>
@@ -70,7 +68,7 @@ export default function CardModal({
                 onClick={handleStartExchange}
                 className="px-6 py-3 bg-orange-500 text-white rounded-4xl text-md lg:text-2xl hover:bg-orange-600 cursor-pointer"
               >
-                Proponer intercambio
+                Propose Exchange
               </button>
             </div>
           </div>

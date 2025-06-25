@@ -34,7 +34,7 @@ export default function SelectTargetCardModal({
     <div className="fixed inset-0 z-50 bg-black bg-opacity-30 flex items-center justify-center px-4 py-8">
       <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6 rounded-2xl shadow-2xl">
         <h2 className="text-xl font-bold mb-6 text-center">
-          Seleccioná una carta para ofrecer
+          Select a card to offer
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -53,18 +53,16 @@ export default function SelectTargetCardModal({
 
               <span
                 className={`text-xs mt-1 inline-block px-2 py-0.5 rounded-full ${
-                  card.status === "available"
+                  card.grade === "Mint"
                     ? "bg-green-100 text-green-700"
-                    : card.status === "pending"
-                    ? "bg-yellow-100 text-yellow-700"
-                    : "bg-red-100 text-red-700"
+                    : card.grade === "Near Mint"
+                    ? "bg-green-100 text-green-700"
+                    : card.grade === "Good"
+                    ? "bg-yellow-100 text-yellow-400"
+                    : "bg-red-100 text-black"
                 }`}
               >
-                {card.status === "available"
-                  ? "Disponible"
-                  : card.status === "pending"
-                  ? "Pendiente"
-                  : "Vendida"}
+                {card.grade}
               </span>
             </div>
           ))}
@@ -75,7 +73,7 @@ export default function SelectTargetCardModal({
             onClick={onClose}
             className="text-lg font-bold text-gray-600 hover:underline hover:text-orange-500 cursor-pointer pb-10 md:pb-6"
           >
-            Cancelar
+            Cancel
           </button>
         </div>
       </div>
