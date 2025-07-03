@@ -63,7 +63,7 @@ const Header = () => {
               Sign Up
             </Button>
           </Link>
-          <Link href={"/discover"} className="hidden lg:flex">
+          <Link href={"/discover"} className="hidden sm:flex">
             <FiCompass
               className={`text-3xl ${
                 isActive("/discover")

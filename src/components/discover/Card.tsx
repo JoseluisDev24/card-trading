@@ -34,11 +34,11 @@ export const Card = ({ name, image, price }: Props) => {
         </div>
       </div>
       <Button
-        className="px-2 py-1 rounded bg-gradient-to-r from-orange-400 to-orange-600 transition duration-200"
+        className="px-2 py-1 bg-gradient-to-r from-orange-400 to-orange-600 transition duration-200"
         sx={{
           color: "#fff",
           fontWeight: "bold",
-          borderRadius: "12px",
+          borderRadius: "24px",
           "&:hover": {
             backgroundImage: "linear-gradient(to right, #fb923c, #f97316)",
           },

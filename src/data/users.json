@@ -2,11 +2,15 @@
   {
     "id": "1",
     "name": "Juan Pérez",
-    "avatar": "https://unavatar.io/github/GonzaloRosano"
+    "avatar": "https://unavatar.io/github/GonzaloRosano",
+    "listings": 5,
+    "trades": 10
   },
   {
     "id": "2",
     "name": "Jose Luis",
-    "avatar": "https://unavatar.io/github/JoseluisDev24"
+    "avatar": "https://unavatar.io/github/JoseluisDev24",
+    "listings": 3,
+    "trades": 7
   }
 ]

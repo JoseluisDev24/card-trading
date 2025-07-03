@@ -2,10 +2,17 @@ import { Button, TextField } from "@mui/material";
 import Image from "next/image";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 
-export default function OffersPending() {
+type Props = {
+  userId: string;
+};
+
+export default function OffersPending({ userId }: Props) {
   return (
     <div className="flex flex-col items-center py-3 w-full">
-      <div className="flex flex-col items-start ">
+      <p className="text-sm text-gray-500 mb-2">
+        Viewing offers for user ID: {userId}
+      </p>
+      <div className="flex flex-col items-start">
         <div>
           <Button
             sx={{
@@ -33,7 +40,7 @@ export default function OffersPending() {
                     alt="Offer"
                     width={90}
                     height={0}
-                    className="shadow-lg "
+                    className="shadow-lg"
                     style={{ height: "auto", borderRadius: "16px" }}
                   />
                   <Image
@@ -41,7 +48,7 @@ export default function OffersPending() {
                     alt="Offer"
                     width={90}
                     height={0}
-                    className="shadow-lg "
+                    className="shadow-lg"
                     style={{ height: "auto", borderRadius: "16px" }}
                   />
                 </div>
@@ -65,7 +72,7 @@ export default function OffersPending() {
                 alt="Offer"
                 width={90}
                 height={0}
-                className="shadow-lg "
+                className="shadow-lg"
                 style={{ height: "auto", borderRadius: "16px" }}
               />
               <div className="flex justify-center items-center gap-2">

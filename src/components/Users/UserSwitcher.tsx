@@ -27,16 +27,21 @@ export default function UserSwitcher({ onSelectUser }: Props) {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const id = e.target.value;
     setSelectedId(id);
-    setCurrentUserId(id); 
-    onSelectUser(id); }
+    setCurrentUserId(id);
+    onSelectUser(id);
+  };
 
   return (
-    <div className="mb-4">
-      <label className="text-sm font-medium mr-2">User</label>
+    <div className="flex items-center gap-2">
+      <span className="text-gray-500 text-md hidden sm:block">Select User:</span>
       <select
         onChange={handleChange}
         value={selectedId}
-        className="border px-2 py-1 rounded"
+        className="border border-gray-300 bg-white text-gray-700 rounded-md text-sm px-2 py-1 focus:outline-none focus:ring-2 focus:ring-orange-500 transition shadow-sm"
+        style={{
+          height: "32px",
+          minWidth: "110px",
+        }}
       >
         {users.map((user: User) => (
           <option key={user.id} value={user.id}>

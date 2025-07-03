@@ -57,7 +57,7 @@ export default function Discover() {
           Latest topics
         </span>
         <div className="flex flex-col gap-4">
-          <OffersPending />
+          <OffersPending userId={""}  />
         </div>
         <span className="text-gray-900 font-bold text-2xl pt-4 pb-4">
           Filter be Pokemon

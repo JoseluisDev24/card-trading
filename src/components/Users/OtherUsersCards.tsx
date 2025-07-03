@@ -1,24 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import users from "@/data/users.json";
 import userCards from "@/data/userCards.json";
 import cards from "@/data/cards.json";
 import type { Card } from "@/types/Card";
-import { getCurrentUserId } from "@/utils/auth";
 import CardModal from "@/components/Modals/CardModal";
 
-export default function OtherUsersCards() {
-  const [currentUserId, setCurrentUserId] = useState<string | null>(null);
+type Props = {
+  currentUserId: string;
+};
+
+export default function OtherUsersCards({ currentUserId }: Props) {
   const [selectedCard, setSelectedCard] = useState<Card | null>(null);
   const [selectedOwnerId, setSelectedOwnerId] = useState<string | null>(null);
-
-  useEffect(() => {
-    const storedUserId = getCurrentUserId();
-    if (storedUserId) setCurrentUserId(storedUserId);
-  }, []);
-
-  if (!currentUserId) return null;
 
   const isValidGrade = (
     grade: unknown
@@ -26,7 +21,6 @@ export default function OtherUsersCards() {
     return ["Mint", "Near Mint", "Good"].includes(grade as string);
   };
 
-  // Agrupar cartas por usuario (excepto el actual)
   const cardsByUser: Record<string, Card[]> = {};
 
   userCards.forEach((relation) => {
@@ -51,7 +45,7 @@ export default function OtherUsersCards() {
         return (
           <div key={userId} className="mb-6">
             {owner && (
-              <div className="flex items-center gap-3 mb-2">
+              <div className="flex items-center gap-3 mb-4">
                 <img
                   src={owner.avatar}
                   alt={owner.name}
@@ -62,7 +56,7 @@ export default function OtherUsersCards() {
                 </h2>
               </div>
             )}
-            <div className="grid grid-cols-3 md:grid-cols-4 gap-2 max-w-xl">
+            <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 max-w-xl">
               {userCards.map((card) => (
                 <div
                   key={card.id}
