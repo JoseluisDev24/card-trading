@@ -1,19 +1,19 @@
 "use client";
 
-import { useState } from "react";
 import users from "@/data/users.json";
 import userCards from "@/data/userCards.json";
 import cards from "@/data/cards.json";
 import type { Card } from "@/types/Card";
 import CardModal from "@/components/Modals/CardModal";
+import { useUserStore } from "@/store/userStore";
+import { useExchangeStore } from "@/store/exchangeStore";
 
-type Props = {
-  currentUserId: string;
-};
+export default function OtherUsersCards() {
+  const user = useUserStore((state) => state.user);
+  const { selectedCard, selectedOwnerId, setExchange, clearExchange } =
+    useExchangeStore();
 
-export default function OtherUsersCards({ currentUserId }: Props) {
-  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
-  const [selectedOwnerId, setSelectedOwnerId] = useState<string | null>(null);
+  if (!user) return null;
 
   const isValidGrade = (
     grade: unknown
@@ -24,15 +24,11 @@ export default function OtherUsersCards({ currentUserId }: Props) {
   const cardsByUser: Record<string, Card[]> = {};
 
   userCards.forEach((relation) => {
-    if (relation.userId !== currentUserId) {
+    if (relation.userId !== user.id) {
       const card = cards.find((c) => c.id === relation.cardId);
       if (card) {
         const grade = isValidGrade(card.grade) ? card.grade : "Good";
-
-        if (!cardsByUser[relation.userId]) {
-          cardsByUser[relation.userId] = [];
-        }
-
+        if (!cardsByUser[relation.userId]) cardsByUser[relation.userId] = [];
         cardsByUser[relation.userId].push({ ...card, grade });
       }
     }
@@ -61,10 +57,7 @@ export default function OtherUsersCards({ currentUserId }: Props) {
                 <div
                   key={card.id}
                   className="rounded-2xl bg-white w-28 shadow p-1 flex flex-col items-center cursor-pointer"
-                  onClick={() => {
-                    setSelectedCard(card);
-                    setSelectedOwnerId(userId);
-                  }}
+                  onClick={() => setExchange(card, userId)}
                 >
                   <img
                     src={card.image}
@@ -81,11 +74,8 @@ export default function OtherUsersCards({ currentUserId }: Props) {
       {selectedCard && selectedOwnerId && (
         <CardModal
           card={selectedCard}
-          onClose={() => {
-            setSelectedCard(null);
-            setSelectedOwnerId(null);
-          }}
-          currentUserId={currentUserId}
+          onClose={clearExchange}
+          currentUserId={user.id}
           toUserId={selectedOwnerId}
         />
       )}

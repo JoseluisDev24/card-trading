@@ -1,20 +1,18 @@
+"use client";
+
 import { notFound } from "next/navigation";
-import users from "@/data/users.json";
 import userCards from "@/data/userCards.json";
 import cards from "@/data/cards.json";
 import OffersPending from "@/components/offers/OffersPending";
 import type { Card } from "@/types/Card";
+import { useUserStore } from "@/store/userStore"; 
 
-type Props = { params: Promise<{ id: string }> };
+export default function UserPage() {
+  const {user} = useUserStore(); 
 
-export default async function UserPage({ params }: Props) {
-  const { id: userId } = await params;
-  const user = users.find((user) => user.id === userId);
-
-  if (!user) return notFound();
-
+  if (!user) return notFound(); 
   const userCardRelations = userCards.filter(
-    (relation) => relation.userId === userId
+    (relation) => relation.userId === user.id
   );
 
   const userFullCards: Card[] = userCardRelations
@@ -44,9 +42,7 @@ export default async function UserPage({ params }: Props) {
         </div>
       </div>
       <div className="h-36 border-b border-gray-300 relative">
-        <div className="absolute lg:left-1/4">
-          {/* <h1 className="text-2xl lg:text-4xl font-bold">{user.name}</h1> */}
-        </div>
+        <div className="absolute lg:left-1/4"></div>
       </div>
       <div className="lg:flex justify-evenly p-4">
         <section className="mb-8">
@@ -69,7 +65,7 @@ export default async function UserPage({ params }: Props) {
 
         <section>
           <h2 className="text-xl font-semibold mb-2">Offers received</h2>
-          <OffersPending userId={userId} />
+          <OffersPending userId={user.id} />
         </section>
       </div>
     </div>

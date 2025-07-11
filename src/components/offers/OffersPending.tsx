@@ -7,11 +7,9 @@ type Props = {
 };
 
 export default function OffersPending({ userId }: Props) {
+  console.log(userId);
   return (
     <div className="flex flex-col items-center py-3 w-full">
-      <p className="text-sm text-gray-500 mb-2">
-        Viewing offers for user ID: {userId}
-      </p>
       <div className="flex flex-col items-start">
         <div>
           <Button

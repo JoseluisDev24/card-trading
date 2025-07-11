@@ -1,26 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { getCurrentUserId, setCurrentUserId } from "@/utils/auth";
-import MyCards from "@/components/home/MyCards";
 import OtherUsersCards from "@/components/Users/OtherUsersCards";
 import OffersPending from "@/components/offers/OffersPending";
 import { Button } from "@mui/material";
 import { IoFilter } from "react-icons/io5";
 import Link from "next/link";
+import { useUserStore } from "@/store/userStore";
+import UserSwitcher from "../Users/UserSwitcher";
 
 export default function ClientHome() {
-  const [currentUserId, setCurrentUserIdState] = useState<string>("1");
+  const {user} = useUserStore();
 
-  useEffect(() => {
-    const storedId = getCurrentUserId();
-    if (storedId) setCurrentUserIdState(storedId);
-  }, []);
-
-  const handleUserChange = (id: string) => {
-    setCurrentUserId(id);
-    setCurrentUserIdState(id);
-  };
+  if (!user) {
+    return (
+      <div className="flex flex-col items-center py-10 text-gray-600 text-lg">
+        <p>Select a user to continue</p>
+        <UserSwitcher />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col min-h-screen p-4 lg:px-70 lg:py-14 bg-white">
@@ -68,10 +66,17 @@ export default function ClientHome() {
       </div>
 
       <div className="max-h-1 min-h-1 bg-gray-200 w-full"></div>
-
-      <MyCards currentUserId={currentUserId} onUserChange={handleUserChange} />
-      <OtherUsersCards currentUserId={currentUserId} />
-      <OffersPending userId="" />
+      <div className="flex items-center justify-between py-4">
+        <div className="flex items-center gap-4">
+          <h2 className="text-xl font-semibold text-gray-800"></h2>
+          Welcome,
+          <img src={user.avatar} className="w-8 h-8 rounded-full border" />{" "}
+          {user.name}
+        </div>
+        <UserSwitcher />
+      </div>
+      <OtherUsersCards />
+      <OffersPending userId={user.id} />
     </div>
   );
 }

@@ -1,28 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import UserSwitcher from "@/components/Users/UserSwitcher";
-import users from "@/data/users.json";
 import userCards from "@/data/userCards.json";
 import cards from "@/data/cards.json";
-import type { User } from "@/types/User";
 import type { UserCard } from "@/types/UserCard";
 import type { Card } from "@/types/Card";
+import { useUserStore } from "@/store/userStore";
 
-type Props = {
-  currentUserId: string;
-  onUserChange: (id: string) => void;
-};
-
-export default function MyCards({ currentUserId, onUserChange }: Props) {
+export default function MyCards() {
+  const {user} = useUserStore();
   const [showAllCards, setShowAllCards] = useState(false);
 
-  const currentUser: User | undefined = users.find(
-    (user) => user.id === currentUserId
-  );
+  if (!user) return <p className="text-center">No user selected</p>;
 
   const userCardRelations: UserCard[] = userCards.filter(
-    (relation) => relation.userId === currentUserId
+    (relation) => relation.userId === user.id
   );
 
   const userFullCards: Card[] = userCardRelations
@@ -36,14 +28,13 @@ export default function MyCards({ currentUserId, onUserChange }: Props) {
   return (
     <div className="py-6">
       <div className="flex items-center justify-center sm:justify-start gap-6 sm:gap-10  pb-4">
-        <UserSwitcher onSelectUser={onUserChange} />
         <div className="flex items-center gap-2">
           <img
-            src={currentUser?.avatar}
-            alt={currentUser?.name}
+            src={user.avatar}
+            alt={user.name}
             className="w-10 h-10 rounded-full border"
           />
-          <span className="text-gray-700 font-semibold">{currentUser?.name}</span>
+          <span className="text-gray-700 font-semibold">{user.name}</span>
         </div>
       </div>
 

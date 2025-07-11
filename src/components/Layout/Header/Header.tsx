@@ -9,11 +9,12 @@ import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 import { Search } from "../Sidebar/Search";
 import { FiCompass } from "react-icons/fi";
 // import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-
+import { useUserStore } from "@/store/userStore";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const pathname = usePathname();
+  const {user} = useUserStore(); 
 
   const isActive = (path: string) => pathname === path;
 
@@ -76,7 +77,7 @@ const Header = () => {
         <div className="hidden lg:flex items-center justify-center w-2/5">
           <Search />
         </div>
-        <div className="flex justify-between items-center gap-2">
+        <div className="flex justify-between items-center gap-4">
           {/* <Link href={"/cart"}>
             <IconButton>
               <ShoppingCartOutlinedIcon
@@ -88,6 +89,17 @@ const Header = () => {
               />
             </IconButton>
           </Link> */}
+          {user && (
+            <Link href={`/users/${user.id}`}>
+              <Image
+                src={user.avatar}
+                width={40}
+                height={40}
+                alt={user.name}
+                className="w-8 h-8 rounded-full border cursor-pointer"
+              />
+            </Link>
+          )}
           <Link
             href={"/"}
             className="flex items-center w-32 lg:w-36 py-2 gap-2"

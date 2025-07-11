@@ -21,9 +21,7 @@ import Image from "next/image";
 import { Search } from "@/components/Layout/Sidebar/Search";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { getCurrentUserId } from "@/utils/auth";
-import users from "@/data/users.json";
+import { useUserStore } from "@/store/userStore"; 
 
 interface SidebarProps {
   open: boolean;
@@ -37,16 +35,10 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const [currentUserId, setCurrentUserId] = useState<string | null>(null);
+  const currentUser = useUserStore((state) => state.user); 
+  const clearUser = useUserStore((state) => state.clearUser);
 
   const isActive = (path: string) => pathname === path;
-
-  useEffect(() => {
-    const id = getCurrentUserId();
-    setCurrentUserId(id);
-  }, []);
-
-  const currentUser = users.find((u) => u.id === currentUserId);
 
   const desktopItems = isDesktop
     ? [
@@ -139,9 +131,9 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
   ];
 
   const handleLogout = () => {
-    localStorage.removeItem("currentUserId");
+    router.push("/");
+    clearUser(); 
     toggleDrawer(false);
-    router.push("/login");
   };
 
   return (
@@ -226,7 +218,7 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
         <Divider sx={{ my: 1 }} />
 
         {currentUser && (
-          <ListItem onClick={handleLogout}>
+          <ListItem onClick={handleLogout} className="cursor-pointer">
             <ListItemIcon sx={{ minWidth: 50 }}>
               <LogoutIcon sx={{ color: "#9B1C1C" }} />
             </ListItemIcon>
