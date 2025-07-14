@@ -7,9 +7,10 @@ import { IoFilter } from "react-icons/io5";
 import Link from "next/link";
 import { useUserStore } from "@/store/userStore";
 import UserSwitcher from "../Users/UserSwitcher";
+import Image from "next/image";
 
 export default function ClientHome() {
-  const {user} = useUserStore();
+  const { user } = useUserStore();
 
   if (!user) {
     return (
@@ -70,8 +71,17 @@ export default function ClientHome() {
         <div className="flex items-center gap-4">
           <h2 className="text-xl font-semibold text-gray-800"></h2>
           Welcome,
-          <img src={user.avatar} className="w-8 h-8 rounded-full border" />{" "}
-          {user.name}
+          <Link href={`/users/${user.id}`} className="flex items-center gap-2">
+            <Image
+              src={user.avatar}
+              alt={user.name}
+              width={32}
+              height={32}
+              className="rounded-full border"
+            />
+
+            {user.name}
+          </Link>
         </div>
         <UserSwitcher />
       </div>

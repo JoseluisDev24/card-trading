@@ -6,6 +6,7 @@ import cards from "@/data/cards.json";
 import type { UserCard } from "@/types/UserCard";
 import type { Card } from "@/types/Card";
 import { useUserStore } from "@/store/userStore";
+import Image from "next/image";
 
 export default function MyCards() {
   const {user} = useUserStore();
@@ -29,10 +30,12 @@ export default function MyCards() {
     <div className="py-6">
       <div className="flex items-center justify-center sm:justify-start gap-6 sm:gap-10  pb-4">
         <div className="flex items-center gap-2">
-          <img
+          <Image
             src={user.avatar}
             alt={user.name}
-            className="w-10 h-10 rounded-full border"
+            width={40}
+            height={40}
+            className="rounded-full border"
           />
           <span className="text-gray-700 font-semibold">{user.name}</span>
         </div>
@@ -44,10 +47,12 @@ export default function MyCards() {
             key={card.id}
             className="rounded-2xl bg-white w-28 shadow p-1 flex flex-col items-center cursor-pointer"
           >
-            <img
+            <Image
               src={card.image}
               alt={card.name}
-              className="h-36 object-cover rounded-2xl hover:scale-125 transition-transform duration-400 shadow-xl"
+              width={144}
+              height={144}
+              className="object-cover rounded-2xl hover:scale-125 transition-transform duration-400 shadow-xl"
             />
           </div>
         ))}

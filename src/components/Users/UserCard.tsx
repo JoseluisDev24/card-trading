@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -18,10 +19,12 @@ export default function UserCard({
   return (
     <Link href={`/users/${id}`}>
       <div className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-2xl shadow hover:shadow-md transition cursor-pointer w-full">
-        <img
+        <Image
           src={avatar}
           alt={name}
-          className="w-16 h-16 rounded-lg object-cover flex-shrink-0"
+          width={64}
+          height={64}
+          className="rounded-lg object-cover flex-shrink-0"
         />
         <div className="flex flex-col flex-grow">
           <h3 className="text-lg font-bold text-gray-800">{name}</h3>

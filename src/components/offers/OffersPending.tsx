@@ -1,6 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import Image from "next/image";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
+import users from "@/data/users.json";
 
 type Props = {
   userId: string;
@@ -52,13 +53,15 @@ export default function OffersPending({ userId }: Props) {
                 </div>
 
                 <div className="flex justify-center items-center gap-2">
-                  <img
+                  <Image
                     src="https://unavatar.io/github/JoseluisDev24"
                     alt="imagen de perfil"
-                    className="w-4 rounded-full"
+                    width={16}
+                    height={16}
+                    className="rounded-full"
                   />
                   <span className="font-semibold text-md text-gray-800">
-                    Shane
+                    {users[0].name}
                   </span>
                 </div>
               </div>
@@ -74,13 +77,15 @@ export default function OffersPending({ userId }: Props) {
                 style={{ height: "auto", borderRadius: "16px" }}
               />
               <div className="flex justify-center items-center gap-2">
-                <img
+                <Image
                   src="https://unavatar.io/github/GonzaloRosano"
                   alt="imagen de perfil"
-                  className="w-4 rounded-full"
+                  width={16}
+                  height={16}
+                  className="rounded-full"
                 />
                 <span className="font-semibold text-md text-gray-800">
-                  J6Remy
+                  {users[1].name}
                 </span>
               </div>
             </div>
@@ -88,10 +93,12 @@ export default function OffersPending({ userId }: Props) {
         </div>
       </div>
       <div className="flex justify-center items-center gap-2 w-full">
-        <img
+        <Image
           src="https://unavatar.io/github/JoseluisDev24"
           alt="imagen de perfil"
-          className="w-6 rounded-full"
+          width={24}
+          height={24}
+          className="rounded-full"
         />
         <TextField
           label="Write a comment..."

@@ -6,15 +6,15 @@ const WelcomeModal = () => {
   const [show, setShow] = useState(false);
   const pathname = usePathname();
 
-  const isHome = pathname === "/home";
+  const isDiscover = pathname === "/discover";
 
   useEffect(() => {
-    if (isHome) {
+    if (isDiscover) {
       setShow(true);
     }
-  }, [isHome]);
+  }, [isDiscover]);
 
-  if (!show || !isHome) return null;
+  if (!show || !isDiscover) return null;
 
   return (
     <>

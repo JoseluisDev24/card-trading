@@ -6,8 +6,17 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "unavatar.io",
-        port: "",
-        pathname: "/**", 
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "developers.google.com",
+        pathname: "/identity/images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/wikipedia/commons/**",
       },
     ],
   },

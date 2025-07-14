@@ -83,10 +83,12 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
       ? [
           {
             icon: (
-              <img
+              <Image
                 src={currentUser.avatar}
                 alt={currentUser.name}
-                className="w-8 h-8 rounded-full border"
+                width={32}
+                height={32}
+                className="rounded-full border"
               />
             ),
             label: "My Profile",

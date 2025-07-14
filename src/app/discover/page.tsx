@@ -6,6 +6,7 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import OffersPending from "@/components/offers/OffersPending";
 import Link from "next/link";
 import { filterPokemon } from "@/data/discover/filterPokemon";
+import Image from "next/image";
 
 export default function Discover() {
   const trendingSearches = [
@@ -57,7 +58,7 @@ export default function Discover() {
           Latest topics
         </span>
         <div className="flex flex-col gap-4">
-          <OffersPending userId={""}  />
+          <OffersPending userId={""} />
         </div>
         <span className="text-gray-900 font-bold text-2xl pt-4 pb-4">
           Filter be Pokemon
@@ -68,11 +69,14 @@ export default function Discover() {
               key={poke.name}
               className="group flex flex-col items-center min-w-[80px] cursor-pointer transition duration-300"
             >
-              <img
-                src={poke.image}
-                alt={poke.name}
-                className="w-18 h-18 object-contain rounded-full border border-gray-300 bg-white transition-transform duration-300 group-hover:scale-105"
-              />
+              <div className="relative w-[72px] h-[72px]">
+                <Image
+                  src={poke.image}
+                  alt={poke.name}
+                  fill
+                  className="object-cover rounded-full border border-gray-300 bg-white transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
               <span className="text-sm mt-1 text-gray-700 font-semibold transition-colors duration-300 group-hover:text-orange-500">
                 {poke.name}
               </span>

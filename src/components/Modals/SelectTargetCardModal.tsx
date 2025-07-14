@@ -3,6 +3,7 @@
 import userCards from "@/data/userCards.json";
 import cards from "@/data/cards.json";
 import type { Card } from "@/types/Card";
+import Image from "next/image";
 
 type Props = {
   currentUserId: string;
@@ -44,11 +45,14 @@ export default function SelectTargetCardModal({
               onClick={() => handleSelectCard(card.id)}
               className="cursor-pointer rounded-lg p-2 text-center shadow-xl transition"
             >
-              <img
-                src={card.image}
-                alt={card.name}
-                className="w-full h-40 object-contain mx-auto rounded-md"
-              />
+              <div className="relative w-full h-40 mx-auto rounded-md">
+                <Image
+                  src={card.image}
+                  alt={card.name}
+                  fill
+                  className="object-contain rounded-md"
+                />
+              </div>
               <p className="mt-2 font-semibold text-sm">{card.name}</p>
 
               <span

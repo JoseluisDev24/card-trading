@@ -8,7 +8,6 @@ import {
   Checkbox,
   Divider,
   IconButton,
-  InputAdornment,
   TextField,
   Typography,
 } from "@mui/material";
@@ -39,7 +38,7 @@ export default function LoginModal({
       slotProps={{
         root: {
           sx: {
-            zIndex: 1600, 
+            zIndex: 1600,
           },
         },
         paper: {
@@ -58,7 +57,7 @@ export default function LoginModal({
         container: {
           sx: {
             margin: 1,
-           marginTop: "-2px",
+            marginTop: "-2px",
           },
         },
         backdrop: {
@@ -160,14 +159,14 @@ export default function LoginModal({
           fullWidth
           size="small"
           sx={{ marginBottom: "1rem" }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
+          slotProps={{
+            input: {
+              endAdornment: (
                 <IconButton onClick={handleTogglePassword} edge="end">
                   {showPassword ? <VisibilityOff /> : <Visibility />}
                 </IconButton>
-              </InputAdornment>
-            ),
+              ),
+            },
           }}
         />
 
@@ -211,7 +210,7 @@ export default function LoginModal({
           variant="outlined"
           fullWidth
           startIcon={
-            <img
+            <Image
               src="https://developers.google.com/identity/images/g-logo.png"
               alt="Google"
               width={20}
@@ -250,10 +249,11 @@ export default function LoginModal({
             fontWeight: "bold",
           }}
           startIcon={
-            <img
+            <Image
               src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png"
               alt="Facebook"
-              className="w-5 h-5"
+              width={20}
+              height={20}
             />
           }
           className=" text-white"

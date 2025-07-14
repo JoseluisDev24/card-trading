@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Card } from "@/types/Card";
 import SelectTargetCardModal from "@/components/Modals/SelectTargetCardModal";
+import Image from "next/image";
 
 type Props = {
   card: Card;
@@ -34,10 +35,13 @@ export default function CardModal({
             &times;
           </button>
 
-          <img
+          <Image
             src={card.image}
             alt={card.name}
-            className="w-54 h-70 lg:w-76 lg:h-96 object-cover rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl shadow-black/20"
+            width={216}
+            height={280}
+            className="object-cover rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl shadow-black/20 lg:w-[304px] lg:h-[384px]"
+            sizes="(min-width: 1024px) 304px, 216px"
           />
 
           <div className="text-center max-w-lg lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-4 px-2">

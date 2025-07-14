@@ -7,6 +7,7 @@ import type { Card } from "@/types/Card";
 import CardModal from "@/components/Modals/CardModal";
 import { useUserStore } from "@/store/userStore";
 import { useExchangeStore } from "@/store/exchangeStore";
+import Image from "next/image";
 
 export default function OtherUsersCards() {
   const user = useUserStore((state) => state.user);
@@ -42,10 +43,12 @@ export default function OtherUsersCards() {
           <div key={userId} className="mb-6">
             {owner && (
               <div className="flex items-center gap-3 mb-4">
-                <img
+                <Image
                   src={owner.avatar}
                   alt={owner.name}
-                  className="w-8 h-8 rounded-full border"
+                  width={32}
+                  height={32}
+                  className="rounded-full border"
                 />
                 <h2 className="text-md font-bold text-gray-800">
                   {owner.name}
@@ -56,13 +59,14 @@ export default function OtherUsersCards() {
               {userCards.map((card) => (
                 <div
                   key={card.id}
-                  className="rounded-2xl bg-white w-28 shadow p-1 flex flex-col items-center cursor-pointer"
+                  className="rounded-2xl bg-white w-28 h-40 shadow p-1 flex flex-col items-center cursor-pointer overflow-hidden relative"
                   onClick={() => setExchange(card, userId)}
                 >
-                  <img
+                  <Image
                     src={card.image}
                     alt={card.name}
-                    className="h-36 object-cover rounded-2xl"
+                    fill
+                    className="rounded-2xl object-cover"
                   />
                 </div>
               ))}
