@@ -42,7 +42,7 @@ export default function OtherUsersCards() {
         return (
           <div key={userId} className="mb-6">
             {owner && (
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-2 mb-4">
                 <Image
                   src={owner.avatar}
                   alt={owner.name}
@@ -50,9 +50,14 @@ export default function OtherUsersCards() {
                   height={32}
                   className="rounded-full border"
                 />
+                <div className="flex flex-col">
                 <h2 className="text-md font-bold text-gray-800">
                   {owner.name}
                 </h2>
+                <span className="text-sm text-gray-600">
+                  
+                </span>
+                </div>
               </div>
             )}
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 max-w-xl">

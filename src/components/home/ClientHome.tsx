@@ -2,6 +2,9 @@
 
 import OtherUsersCards from "@/components/Users/OtherUsersCards";
 import OffersPending from "@/components/offers/OffersPending";
+import UserPostComponent from "@/components/Users/UserPostComponent";
+import userPosts from "@/data/userPosts.json";
+import {UserPost} from "@/types/UserPost";
 import { Button } from "@mui/material";
 import { IoFilter } from "react-icons/io5";
 import Link from "next/link";
@@ -84,6 +87,14 @@ export default function ClientHome() {
           </Link>
         </div>
         <UserSwitcher />
+      </div>
+      <div className="flex flex-col gap-4 mb-6">
+          {userPosts.map((post) => (
+            <UserPostComponent
+              key={post.id}
+              post={post}
+            />
+          ))}
       </div>
       <OtherUsersCards />
       <OffersPending userId={user.id} />

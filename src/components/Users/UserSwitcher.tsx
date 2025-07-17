@@ -25,7 +25,7 @@ export default function UserSwitcher() {
       <select
         value={selectedId}
         onChange={handleChange}
-        className="border px-2 py-1 text-sm rounded"
+        className="border px-2 py-1 text-sm rounded cursor-pointer"
       >
         <option value="" disabled>
           Select a user

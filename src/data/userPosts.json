@@ -1,0 +1,20 @@
+[
+  {
+    "id": "post1",
+    "userId": "1",
+    "userName": "Juan Pérez",
+    "userAvatar": "https://unavatar.io/github/GonzaloRosano",
+    "cardImage": "/cards/charizard.avif",
+    "cardName": "Spheal EX Legend Maker Common #65",
+    "createdAt": "2023-10-01T12:00:00Z"
+  },
+  {
+    "id": "post2",
+    "userId": "2",
+    "userName": "Jose Luis",
+    "userAvatar": "https://unavatar.io/github/JoseluisDev24",
+    "cardImage": "/cards/agumon.jpeg",
+    "cardName": "Agumon",
+    "createdAt": "2023-10-01T12:00:00Z"
+  }
+]
