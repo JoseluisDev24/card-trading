@@ -4,7 +4,6 @@ import OtherUsersCards from "@/components/Users/OtherUsersCards";
 import OffersPending from "@/components/offers/OffersPending";
 import UserPostComponent from "@/components/Users/UserPostComponent";
 import userPosts from "@/data/userPosts.json";
-import {UserPost} from "@/types/UserPost";
 import { Button } from "@mui/material";
 import { IoFilter } from "react-icons/io5";
 import Link from "next/link";
