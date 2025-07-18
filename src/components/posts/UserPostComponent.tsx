@@ -4,6 +4,7 @@ import { UserPost } from "@/types/UserPost";
 import Image from "next/image";
 import SearchIcon from "@mui/icons-material/Search";
 import { HiDotsHorizontal } from "react-icons/hi";
+import PostAction from "@/components/posts/PostActions";
 
 type Props = {
   post: UserPost;
@@ -21,7 +22,7 @@ export default function UserPostComponent({ post }: Props) {
             height={40}
             className="rounded-full object-cover"
           />
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center leading-none gap-1">
             <span className="font-bold text-gray-800">{post.userName}</span>
             <span className="text-gray-500">2 hours ago</span>
           </div>
@@ -29,7 +30,7 @@ export default function UserPostComponent({ post }: Props) {
         <HiDotsHorizontal className="text-gray-700 cursor-pointer text-3xl" />
       </div>
 
-      <div className="flex items-start gap-4">
+      <div className="flex items-start gap-4 pb-2">
         <Image
           src={post.cardImage}
           alt={post.cardName}
@@ -47,6 +48,8 @@ export default function UserPostComponent({ post }: Props) {
           </span>
         </div>
       </div>
+
+      <PostAction />
     </div>
   );
 }

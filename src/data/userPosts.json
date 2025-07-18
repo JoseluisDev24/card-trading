@@ -13,8 +13,17 @@
     "userId": "2",
     "userName": "Jose Luis",
     "userAvatar": "https://unavatar.io/github/JoseluisDev24",
-    "cardImage": "/cards/agumon.jpeg",
-    "cardName": "Agumon",
+    "cardImage": "/pokemon/pikachu.avif",
+    "cardName": "Pikachu Holo Rare #25",
+    "createdAt": "2023-10-01T12:00:00Z"
+  },
+   {
+    "id": "post4",
+    "userId": "1",
+    "userName": "Juan Pérez",
+    "userAvatar": "https://unavatar.io/github/GonzaloRosano",
+    "cardImage": "/cards/feraligatr.jpeg",
+    "cardName": "Spheal EX Legend Maker Common #65",
     "createdAt": "2023-10-01T12:00:00Z"
   }
 ]

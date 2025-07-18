@@ -1,7 +1,8 @@
-import { Button, TextField } from "@mui/material";
+import { Button } from "@mui/material";
 import Image from "next/image";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import users from "@/data/users.json";
+import PostAction from "@/components/posts/PostActions";
 
 type Props = {
   userId: string;
@@ -92,34 +93,9 @@ export default function OffersPending({ userId }: Props) {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-2 w-full">
-        <Image
-          src="https://unavatar.io/github/JoseluisDev24"
-          alt="imagen de perfil"
-          width={24}
-          height={24}
-          className="rounded-full"
-        />
-        <TextField
-          label="Write a comment..."
-          variant="outlined"
-          size="small"
-          className="w-full"
-          slotProps={{
-            input: {
-              sx: {
-                backgroundColor: "#f5f5f5",
-                borderRadius: "16px",
-                height: 40,
-                paddingX: 2,
-                "& fieldset": {
-                  border: "none",
-                },
-              },
-            },
-          }}
-        />
-      </div>
+     
+      <PostAction />
+      
     </div>
   );
 }
