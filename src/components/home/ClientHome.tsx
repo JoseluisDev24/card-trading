@@ -73,7 +73,7 @@ export default function ClientHome() {
         <div className="flex items-center gap-4">
           <h2 className="text-xl font-semibold text-gray-800"></h2>
           Welcome,
-          <Link href={`/users/${user.id}`} className="flex items-center gap-2">
+          <Link href={`/users/profile`} className="flex items-center gap-2">
             <Image
               src={user.avatar}
               alt={user.name}
@@ -93,7 +93,7 @@ export default function ClientHome() {
         ))}
       </div>
       <OffersPending userId={user.id} />
-      <OtherUsersCards />
+      <OtherUsersCards userId=""/>
     </div>
   );
 }

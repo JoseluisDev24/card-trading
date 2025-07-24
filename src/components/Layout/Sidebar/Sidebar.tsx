@@ -92,7 +92,7 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
               />
             ),
             label: "My Profile",
-            href: `/users/${currentUser.id}`,
+            href: `/users/profile`,
             color: "#001F3F",
             fontWeight: 600,
           },

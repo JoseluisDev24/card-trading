@@ -5,16 +5,26 @@ import Image from "next/image";
 import SearchIcon from "@mui/icons-material/Search";
 import { HiDotsHorizontal } from "react-icons/hi";
 import PostAction from "@/components/posts/PostActions";
+import Link from "next/link";
+import { useUserStore } from "@/store/userStore";
 
 type Props = {
   post: UserPost;
 };
 
 export default function UserPostComponent({ post }: Props) {
+  const { user } = useUserStore();
+
+  const isMe = user && user.id === post.userId;
+  const href = isMe ? "/users/profile" : `/users/${post.userId}`;
+
   return (
     <div className="flex flex-col gap-2 p-4 w-full bg-white cursor-pointer">
       <div className="flex justify-between items-center mb-2">
-        <div className="flex items-center gap-2">
+        <Link
+          href={href}
+          className="flex items-center gap-2 hover:opacity-80"
+        >
           <Image
             src={post.userAvatar}
             alt={post.userName}
@@ -24,9 +34,10 @@ export default function UserPostComponent({ post }: Props) {
           />
           <div className="flex flex-col items-center justify-center leading-none gap-1">
             <span className="font-bold text-gray-800">{post.userName}</span>
-            <span className="text-gray-500">2 hours ago</span>
+            <span className="text-gray-500 text-xs">2 hours ago</span>
           </div>
-        </div>
+        </Link>
+
         <HiDotsHorizontal className="text-gray-700 cursor-pointer text-3xl" />
       </div>
 

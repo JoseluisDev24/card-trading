@@ -9,7 +9,6 @@ import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 import { Search } from "../Sidebar/Search";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { FiHome, FiCompass } from "react-icons/fi";
-
 import { useUserStore } from "@/store/userStore";
 
 const Header = () => {
@@ -107,13 +106,13 @@ const Header = () => {
         </div>
         <div className="flex justify-between items-center gap-4">
           {user && (
-            <Link href={`/users/${user.id}`}>
+            <Link href={"/users/profile"}>
               <Image
                 src={user.avatar}
                 width={40}
                 height={40}
                 alt={user.name}
-                className="w-8 h-8 rounded-full border cursor-pointer"
+                className="w-9 h-9 rounded-full border-3 border-blue-200 cursor-pointer"
               />
             </Link>
           )}
