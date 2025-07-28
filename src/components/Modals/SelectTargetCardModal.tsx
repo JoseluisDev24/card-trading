@@ -4,6 +4,8 @@ import userCards from "@/data/userCards.json";
 import cards from "@/data/cards.json";
 import type { Card } from "@/types/Card";
 import Image from "next/image";
+import { createOffer } from "@/utils/offers";
+import { useRouter } from "next/navigation";
 
 type Props = {
   currentUserId: string;
@@ -18,17 +20,26 @@ export default function SelectTargetCardModal({
   requestedCard,
   onClose,
 }: Props) {
+  const router = useRouter(); 
+
   const myCards: Card[] = userCards
     .filter((relation) => relation.userId === currentUserId)
     .map((relation) => cards.find((card) => card.id === relation.cardId))
     .filter((card): card is Card => Boolean(card));
 
   const handleSelectCard = (offeredCardId: string) => {
-    console.log("Propuesta de intercambio:");
-    console.log("Ofrezco:", offeredCardId);
-    console.log("Pido:", requestedCard.id);
-    console.log("De:", currentUserId, "para:", toUserId);
+    const newOffer = createOffer({
+      fromUserId: currentUserId,
+      toUserId,
+      offeredCardId,
+      requestedCardId: requestedCard.id,
+    });
+
+    console.log("Nueva oferta creada:", newOffer);
+
     onClose();
+
+    router.push(`/users/${currentUserId}`);
   };
 
   return (
@@ -43,7 +54,7 @@ export default function SelectTargetCardModal({
             <div
               key={card.id}
               onClick={() => handleSelectCard(card.id)}
-              className="cursor-pointer rounded-lg p-2 text-center shadow-xl transition"
+              className="cursor-pointer rounded-lg p-2 text-center shadow-xl transition hover:scale-105"
             >
               <div className="relative w-full h-40 mx-auto rounded-md">
                 <Image

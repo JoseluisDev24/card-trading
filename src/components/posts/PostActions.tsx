@@ -1,10 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { FaArrowDown, FaArrowUp, FaRegComment, FaShare } from "react-icons/fa";
 import { IconButton, TextField } from "@mui/material";
-
-
+import { useUserStore } from "@/store/userStore"; 
 
 export default function PostAction() {
+  const { user } = useUserStore(); 
 
   return (
     <div className="w-full flex flex-col gap-3">
@@ -37,8 +39,8 @@ export default function PostAction() {
 
       <div className="flex justify-center items-center gap-2 w-full">
         <Image
-          src="https://unavatar.io/github/JoseluisDev24"
-          alt="imagen de perfil"
+          src={user?.avatar || "/default-avatar.png"} 
+          alt="User avatar"
           width={30}
           height={30}
           className="rounded-full"

@@ -4,6 +4,7 @@ import Header from "../components/Layout/Header/Header";
 import WelcomeModal from "@/components/Modals/WelcomeModal";
 import FixedMenu from "../components/Layout/FixedMenu/FixedMenu";
 import Footer from "../components/Layout/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 
 const nunito = Nunito({ subsets: ["latin"] });
@@ -38,6 +39,7 @@ export default function RootLayout({
         <Header />
         <WelcomeModal />
         <main>{children}</main>
+        <Toaster position="top-right" />
         <Footer />
         <FixedMenu />
       </body>

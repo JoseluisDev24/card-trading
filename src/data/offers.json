@@ -3,8 +3,8 @@
     "id": "oferta1",
     "fromUserId": "1",
     "toUserId": "2",
-    "offeredCardId": "card1",
-    "requestedCardId": "card2",
+    "offeredCardId": "c1",
+    "requestedCardId": "c2",
     "status": "pending"
   }
 ]

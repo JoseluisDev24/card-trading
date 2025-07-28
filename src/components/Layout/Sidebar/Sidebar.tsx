@@ -16,16 +16,18 @@ import PeopleAltOutlineIcon from "@mui/icons-material/PeopleOutline";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { FiCompass, FiHome } from "react-icons/fi";
+import CachedIcon from "@mui/icons-material/Cached";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import CloseIcon from "@mui/icons-material/Close";
 import Image from "next/image";
 import { Search } from "@/components/Layout/Sidebar/Search";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { useUserStore } from "@/store/userStore"; 
+import { useUserStore } from "@/store/userStore";
 
 interface SidebarProps {
   open: boolean;
-  onClose: () => void;
+  onClose?: () => void;
   toggleDrawer: (open: boolean) => void;
 }
 
@@ -35,7 +37,7 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const currentUser = useUserStore((state) => state.user); 
+  const currentUser = useUserStore((state) => state.user);
   const clearUser = useUserStore((state) => state.clearUser);
 
   const isActive = (path: string) => pathname === path;
@@ -66,6 +68,34 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
           label: "Discover",
           href: "/discover",
           color: isActive("/discover") ? "#F97316" : "#001F3F",
+          fontWeight: 600,
+        },
+        {
+          icon: (
+            <CachedIcon
+              sx={{
+                color: isActive("/trades") ? "#F97316" : "#001F3F",
+                fontSize: 30,
+              }}
+            />
+          ),
+          label: "My Trades",
+          href: "/trades",
+          color: isActive("/trades") ? "#F97316" : "#001F3F",
+          fontWeight: 600,
+        },
+        {
+          icon: (
+            <MailOutlineIcon
+              sx={{
+                color: isActive("/messages") ? "#F97316" : "#001F3F",
+                fontSize: 30,
+              }}
+            />
+          ),
+          label: "Messages",
+          href: "/messages",
+          color: isActive("/messages") ? "#F97316" : "#001F3F",
           fontWeight: 600,
         },
       ]
@@ -134,7 +164,7 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
 
   const handleLogout = () => {
     router.push("/");
-    clearUser(); 
+    clearUser();
     toggleDrawer(false);
   };
 
