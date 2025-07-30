@@ -10,7 +10,7 @@ export default function TradesPage() {
   if (!user)
     return (
       <div>
-        <p className="p-4 text-gray-600">Selecciona un usuario</p>
+        <p className="p-4 text-gray-600">Select user</p>
         <UserSwitcher />
       </div>
     );

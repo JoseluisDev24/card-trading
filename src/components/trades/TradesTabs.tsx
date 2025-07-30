@@ -119,7 +119,7 @@ export default function TradesTabs({ currentUserId }: Props) {
   );
 
   return (
-    <Box className="p-4 flex flex-col lg:justify-center gap-6">
+    <Box className="p-4 flex flex-col items-center gap-6">
       <Box className="bg-white rounded-full shadow border border-gray-200 w-fit">
         <Tabs
           value={tabIndex}
@@ -141,7 +141,8 @@ export default function TradesTabs({ currentUserId }: Props) {
               disableRipple
               sx={{
                 fontSize: "0.875rem",
-                height: "60px",
+                height: "50px",
+                minWidth: "70px",
                 borderRight:
                   i < tabLabels.length - 1 ? "1px solid #E5E7EB" : "none",
                 "&.Mui-selected": {
@@ -156,9 +157,6 @@ export default function TradesTabs({ currentUserId }: Props) {
       <Box className="text-start text-gray-500">
         {tabIndex === 0 && (
           <>
-            <Typography variant="h6" className="mb-4 font-bold text-gray-700">
-              Offers received:
-            </Typography>
             {offersReceived.length === 0 ? (
               <Typography>No offers received yet.</Typography>
             ) : (
@@ -187,15 +185,15 @@ export default function TradesTabs({ currentUserId }: Props) {
                         </div>
                       )}
 
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
+                      <div className="flex items-center justify-between gap-6">
+                        <div className="flex items-center gap-1">
                           {offeredCard && (
                             <Image
                               src={offeredCard.image}
                               alt={offeredCard.name}
                               width={48}
                               height={64}
-                              className="object-cover rounded border cursor-pointer"
+                              className="object-cover rounded-xl border cursor-pointer"
                               onClick={() =>
                                 handleCardClick(offer.offeredCardId)
                               }
@@ -210,21 +208,21 @@ export default function TradesTabs({ currentUserId }: Props) {
                               alt={requestedCard.name}
                               width={48}
                               height={64}
-                              className="object-cover rounded border cursor-pointer"
+                              className="object-cover border cursor-pointer rounded-xl"
                               onClick={() =>
                                 handleCardClick(offer.requestedCardId)
                               }
                             />
                           )}
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-2">
                           {offer.status === "pending" && (
                             <>
                               <button
                                 onClick={() =>
                                   handleUpdateStatus(offer.id, "accepted")
                                 }
-                                className="bg-green-500 text-white text-xs px-3 py-1 rounded hover:bg-green-600"
+                                className="px-3 py-1 bg-orange-500 text-white rounded-4xl text-xs lg:text-lg hover:bg-orange-600 cursor-pointer"
                               >
                                 Accept
                               </button>
@@ -232,7 +230,7 @@ export default function TradesTabs({ currentUserId }: Props) {
                                 onClick={() =>
                                   handleUpdateStatus(offer.id, "declined")
                                 }
-                                className="bg-red-500 text-white text-xs px-3 py-1 rounded hover:bg-red-600"
+                                className="bg-gray-500 text-white text-xs px-3 py-1 rounded-4xl lg:text-lg hover:bg-gray-600 cursor-pointer"
                               >
                                 Reject
                               </button>
@@ -247,7 +245,7 @@ export default function TradesTabs({ currentUserId }: Props) {
                                 onClick={() =>
                                   handleUpdateStatus(offer.id, "pending")
                                 }
-                                className="bg-gray-300 text-gray-800 text-xs px-3 py-1 rounded hover:bg-gray-400"
+                                className="bg-gray-500 text-white text-xs px-3 py-1 rounded-4xl lg:text-lg hover:bg-gray-600 cursor-pointer"
                               >
                                 Cancel
                               </button>
@@ -296,15 +294,15 @@ export default function TradesTabs({ currentUserId }: Props) {
                         </div>
                       )}
 
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-4">
+                      <div className="flex items-center justify-between gap-6">
+                        <div className="flex items-center gap-1">
                           {offeredCard && (
                             <Image
                               src={offeredCard.image}
                               alt={offeredCard.name}
                               width={48}
                               height={64}
-                              className="object-cover rounded border cursor-pointer"
+                              className="object-cover rounded-xl border cursor-pointer"
                               onClick={() =>
                                 handleCardClick(offer.offeredCardId)
                               }
@@ -319,32 +317,32 @@ export default function TradesTabs({ currentUserId }: Props) {
                               alt={requestedCard.name}
                               width={48}
                               height={64}
-                              className="object-cover rounded border cursor-pointer"
+                              className="object-cover rounded-xl border cursor-pointer"
                               onClick={() =>
                                 handleCardClick(offer.requestedCardId)
                               }
                             />
                           )}
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-2">
                           {offer.status === "pending" && (
                             <button
                               onClick={() => handleCancelOffer(offer.id)}
-                              className="bg-gray-300 text-gray-800 text-xs px-3 py-1 rounded hover:bg-gray-400"
+                              className="bg-gray-500 text-white text-xs px-3 py-1 rounded-4xl lg:text-lg hover:bg-gray-600 cursor-pointer"
                             >
                               Cancel
                             </button>
                           )}
                           {offer.status === "accepted" && (
                             <>
-                              <span className="text-green-600 font-semibold">
+                              <span className="text-green-600 font-semibold border rounded-2xl px-1 py-1">
                                 accepted
                               </span>
                               <button
                                 onClick={() =>
                                   handleUpdateStatus(offer.id, "pending")
                                 }
-                                className="bg-gray-300 text-gray-800 text-xs px-3 py-1 rounded hover:bg-gray-400"
+                                className="bg-gray-500 text-white text-xs px-3 py-1 rounded-4xl lg:text-lg hover:bg-gray-600 cursor-pointer"
                               >
                                 Cancel
                               </button>
@@ -362,13 +360,22 @@ export default function TradesTabs({ currentUserId }: Props) {
 
         {tabIndex === 1 && (
           <>
-            <Typography variant="h6" className="mb-4 font-bold text-gray-700">
+            <Typography
+              variant="h6"
+              className="mb-4 font-bold text-gray-700 text-center"
+            >
               Active Trades:
             </Typography>
             {activeOffers.length === 0 ? (
               <Typography>No active trades.</Typography>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div
+                className={`grid gap-4 ${
+                  activeOffers.length === 1
+                    ? "grid-cols-1 place-items-center"
+                    : "grid-cols-1 lg:grid-cols-2"
+                }`}
+              >
                 {activeOffers.map((offer) => {
                   const offeredCard = getCardById(offer.offeredCardId);
                   const requestedCard = getCardById(offer.requestedCardId);
@@ -399,7 +406,7 @@ export default function TradesTabs({ currentUserId }: Props) {
                             <Image
                               src={toUser.avatar}
                               alt={toUser.name}
-                              width={24}  
+                              width={24}
                               height={24}
                               className="rounded-full border"
                             />
