@@ -335,7 +335,7 @@ export default function TradesTabs({ currentUserId }: Props) {
                           )}
                           {offer.status === "accepted" && (
                             <>
-                              <span className="text-green-600 font-semibold border rounded-2xl px-1 py-1">
+                              <span className="text-green-600 font-semibold">
                                 accepted
                               </span>
                               <button
@@ -400,8 +400,7 @@ export default function TradesTabs({ currentUserId }: Props) {
                             <span>{fromUser.name}</span>
                           </>
                         )}
-                        <span className="mx-1">↔</span>
-                        {toUser && (
+                          {toUser && (
                           <>
                             <Image
                               src={toUser.avatar}

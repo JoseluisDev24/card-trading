@@ -19,16 +19,13 @@ export default function UserSwitcher() {
 
   return (
     <div className="flex gap-2 items-center">
-      <span className="text-gray-600 text-sm hidden sm:block">
-        Change user:
-      </span>
       <select
         value={selectedId}
         onChange={handleChange}
-        className="border px-2 py-1 text-sm rounded cursor-pointer"
+        className="text-md rounded cursor-pointer focus:outline-none text-[#001F3F] font-bold"
       >
         <option value="" disabled>
-          Select a user
+          Change user
         </option>
         {users.map((user) => (
           <option key={user.id} value={user.id}>

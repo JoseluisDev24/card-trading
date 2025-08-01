@@ -24,6 +24,7 @@ import { Search } from "@/components/Layout/Sidebar/Search";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useUserStore } from "@/store/userStore";
+import UserSwitcher from "@/components/Users/UserSwitcher";
 
 interface SidebarProps {
   open: boolean;
@@ -192,7 +193,6 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
             <CloseIcon />
           </IconButton>
         </Box>
-
         <List>
           {topItems.map(({ icon, label, color, fontWeight, href }) => (
             <Link key={label} href={href} passHref>
@@ -247,6 +247,10 @@ export default function Sidebar({ open, toggleDrawer }: SidebarProps) {
           )}
         </List>
 
+        <Divider sx={{ my: 1 }} />
+        <div className="pl-3">
+          <UserSwitcher />
+        </div>
         <Divider sx={{ my: 1 }} />
 
         {currentUser && (
