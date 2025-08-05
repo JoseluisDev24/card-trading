@@ -7,8 +7,11 @@ import OffersPending from "@/components/offers/OffersPending";
 import Link from "next/link";
 import { filterPokemon } from "@/data/discover/filterPokemon";
 import Image from "next/image";
+import { useUserStore } from "@/store/userStore";
 
 export default function Discover() {
+  const { user } = useUserStore();
+
   const trendingSearches = [
     "Pokemon",
     "Glaceon",
@@ -20,8 +23,6 @@ export default function Discover() {
     "Leafeon",
     "Sylveon",
   ];
-  // You can replace the above array with a dynamic fetch from an API if needed
-  // For example, you could fetch trending searches from an API endpoint
 
   return (
     <div>
@@ -58,7 +59,11 @@ export default function Discover() {
           Latest topics
         </span>
         <div className="flex flex-col gap-4">
-          <OffersPending userId={""} />
+          {user && (
+            <div className="flex flex-col gap-4">
+              <OffersPending userId={user.id} />
+            </div>
+          )}
         </div>
         <span className="text-gray-900 font-bold text-2xl pt-4 pb-4">
           Filter be Pokemon

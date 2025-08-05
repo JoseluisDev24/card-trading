@@ -39,7 +39,7 @@ export default function SelectTargetCardModal({
 
     onClose();
 
-    router.push(`/users/${currentUserId}`);
+    router.push(`/users/${toUserId}`);
   };
 
   return (
